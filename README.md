@@ -1,3 +1,1 @@
-# Project_Tanz_
-Project for a dance studio
-test
+# Мій перший проєкт
