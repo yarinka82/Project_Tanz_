@@ -1,0 +1,9 @@
+/* Common styles */
+@import "./reset.css";
+@import "./container.css";
+@import "./base.css";
+
+/* Page specific styles */
+@import "./header.css";
+@import "./about.css";
+@import "./footer.css";
