@@ -1,0 +1,134 @@
+.btn {
+  background: #a346aa;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 30px;
+  color: #333;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+header {
+  background: #f8f8f8;
+  padding: 20px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  justify-content: center;
+  gap: 20px;
+}
+nav a {
+  text-decoration: none;
+  color: #555;
+  font-weight: 500;
+}
+
+.footer {
+  background-color: #fdf3f8;
+  color: #444;
+  padding: 40px 20px 20px;
+  border-top: 1px solid #e5e5e5;
+  font-size: 15px;
+}
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+}
+.footer-logo h2 {
+  font-size: 24px;
+  color: #b28dff;
+}
+.footer-logo p {
+  margin-top: 5px;
+  font-weight: 300;
+}
+.footer-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.footer-nav a {
+  text-decoration: none;
+  color: #444;
+  transition: color 0.3s;
+}
+.footer-nav a:hover {
+  color: #b28dff;
+}
+.footer-social a {
+  display: inline-block;
+  margin-right: 12px;
+  opacity: 0.8;
+}
+.footer-social img {
+  width: 24px;
+  height: 24px;
+}
+.footer-bottom {
+  margin-top: 30px;
+  border-top: 1px solid #e0e0e0;
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  font-size: 14px;
+}
+.footer-bottom a {
+  color: #888;
+  text-decoration: none;
+}
+.footer-bottom a:hover {
+  text-decoration: underline;
+  color: #b28dff;
+}
+.to-top {
+  font-weight: bold;
+  font-size: 18px;
+}
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease forwards;
+  animation-delay: 0.5s;
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 20px 10px;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .btn {
+    width: 100%;
+    padding: 14px 0;
+  }
+  .gallery img {
+    max-width: 100%;
+    margin: 10px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  h2 {
+    font-size: 1.2rem;
+  }
+  .hero h1 {
+    font-size: 2rem;
+  }
+}
