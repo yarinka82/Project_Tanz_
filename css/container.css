@@ -1,0 +1,54 @@
+/* Styles for Mobile devices */
+.container {
+  min-width: 375px;
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 0 20px;
+
+  h2 {
+    font-size: 1.2rem;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+}
+
+/* Styles for Tablet devices */
+@media only screen and (min-width: 768px) {
+  .container {
+    max-width: 768px;
+    padding: 0 32px;
+  }
+
+  section {
+    padding: 20px 10px;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .btn {
+    width: 100%;
+    padding: 14px 0;
+  }
+
+  .gallery img {
+    max-width: 100%;
+    margin: 10px 0;
+  }
+}
+
+/* Styles for Desktop devices */
+@media only screen and (min-width: 1200px) {
+  .container {
+    max-width: 1200px;
+    padding: 0 100px;
+  }
+}
