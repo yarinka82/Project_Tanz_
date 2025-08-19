@@ -20,8 +20,8 @@ ol {
 }
 
 a {
-  color: currentColor;
   text-decoration: none;
+  color: inherit;
 }
 
 button {

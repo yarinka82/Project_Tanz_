@@ -6,4 +6,5 @@
 /* Page specific styles */
 @import "./header.css";
 @import "./about.css";
+@import "./kurse.css";
 @import "./footer.css";
