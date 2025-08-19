@@ -11,6 +11,11 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
 
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- Normalize -->
     <link
       rel="stylesheet"
@@ -42,71 +47,102 @@
           <li><a href="index.html">Startseite</a></li>
           <li><a href="about.html">Über mich</a></li>
           <li><a href="kurse.html">Tanzrichtungen</a></li>
-          <li><a href="stundenplan.html">Stundenplan</a></li>
-          <li><a href="anmeldung.html">Anmeldung</a></li>
           <li><a href="galerie.html">Galerie</a></li>
-          <li><a href="kontakt.html">Kontakt</a></li>
-          <li><a href="hausordnung.html">Hausordnung</a></li>
-          <li><a href="impressum.html">Impressum</a></li>
         </ul>
       </nav>
     </header>
 
     <!-- Hero Section -->
-    <main>
-      <div class="container">
-        <section class="hero">
-          <div
-            class="hero-image"
-            style="background-image: url('images/katja-hero.jpg')"
-          >
-            <div class="hero-text">
-              <h1>Tanzrichtungen</h1>
-              <p>Tanz ist die Bewegung, die die Seele befreit.</p>
-            </div>
-          </div>
-        </section>
+    <section class="hero">
+      <div class="hero-overlay">
+        <div class="hero-content">
+          <h1>Tanzrichtungen</h1>
+          <p>Tanz ist die Bewegung, die die Seele befreit.</p>
+          <a href="index.html#anmeldung" class="btn">Anmeldung</a>
+        </div>
+      </div>
+    </section>
 
-        <!-- Kurs-Inhalte -->
-        <section class="kurs-section">
+    <main class="container">
+      <!-- Kindertanz -->
+      <section class="kurs-card">
+        <div class="kurs-image">
+          <a href="#img1">
+            <img src="photo_tanz/kurse/kindertanz.jpg" alt="Kindertanz" />
+          </a>
+        </div>
+        <div class="kurs-text">
           <h2>Kindertanz</h2>
           <p>
             Kindertanz fördert nicht nur die Bewegung, sondern auch die Fantasie
-            und das Körpergefühl, es ist eine spielerische Reise zur Musik. Hier
-            werden Koordination, Rhythmusgefühl, Kraft, Ausdauer und
+            und das Körpergefühl, es ist eine spielerische Reise zur Musik.<br />
+            Hier werden Koordination, Rhythmusgefühl, Kraft, Ausdauer und
             Flexibilität ganz nebenbei trainiert - mit viel Spaß und noch mehr
-            Kreativität. Die Kinder springen, drehen, rollen, balancieren und
-            entdecken dabei ihren Körper und ihre Ausdruckskraft. Jede Stunde
-            ist voller Fantasie, Musik und kleinen Abenteuern.
+            Kreativität.<br />
+            Die Kinder springen, drehen, rollen, balancieren und entdecken dabei
+            ihren Körper und ihre Ausdruckskraft.<br />
+            Jede Stunde ist voller Fantasie, Musik und kleinen Abenteuern.
           </p>
-        </section>
+        </div>
+      </section>
 
-        <section class="kurs-section">
+      <!-- Moderner Tanz -->
+      <section class="kurs-card reverse">
+        <div class="kurs-image">
+          <a href="#img2">
+            <img src="photo_tanz/kurse/moderner-tanz.jpg" alt="Moderner Tanz" />
+          </a>
+        </div>
+        <div class="kurs-text">
           <h2>Moderner Tanz für Kinder & Jugendliche</h2>
           <p>
             Die Tanzrichtung bietet Kindern und Jugendlichen einen Raum, in dem
             sie ihre Zeit sinnvoll verbringen, ihre körperlichen Fähigkeiten
-            verbessern und ihr Potenzial durch Kunst entfalten können. Die
-            Unterrichtseinheiten verbinden Elemente aus Akrobatik, Ballett, Yoga
-            und kreativer Bewegung - und ermöglichen es den Teilnehmenden, sich
-            auszudrücken, innere Stärke zu entwickeln und ganz sie selbst zu
-            sein.
+            verbessern und ihr Potenzial durch Kunst entfalten können.<br />
+            Die Unterrichtseinheiten verbinden Elemente aus Akrobatik, Ballett,
+            Yoga und kreativer Bewegung - und ermöglichen es den Teilnehmenden,
+            sich auszudrücken, innere Stärke zu entwickeln und ganz sie selbst
+            zu sein.
           </p>
-        </section>
+        </div>
+      </section>
 
-        <section class="kurs-section">
+      <!-- Contemporary -->
+      <section class="kurs-card">
+        <div class="kurs-image">
+          <a href="#img3">
+            <img src="photo_tanz/kurse/contemporary.jpg" alt="Contemporary" />
+          </a>
+        </div>
+        <div class="kurs-text">
           <h2>Contemporary für Erwachsene</h2>
           <p>
-            Einatmen, loslassen, bei dir ankommen. Der Alltag ist oft voll -
-            hier darfst du abschalten. Wir bewegen uns bewusst, kräftigen den
-            Körper, lassen den Kopf frei werden. Mal fließend, mal kraftvoll,
-            mal ganz ruhig. Dieser Kurs ist für dich, wenn du wieder spüren
-            willst: Ich bin da. Ich bin stark. Ich darf tanzen - so, wie ich
-            bin.
+            Einatmen, loslassen, bei dir ankommen.<br />
+            Der Alltag ist oft voll - hier darfst du abschalten. Wir bewegen uns
+            bewusst, kräftigen den Körper, lassen den Kopf frei werden. Mal
+            fließend, mal kraftvoll, mal ganz ruhig.<br />
+            Dieser Kurs ist für dich, wenn du wieder spüren willst: Ich bin da.
+            Ich bin stark. Ich darf tanzen - so, wie ich bin.
           </p>
-        </section>
-      </div>
+        </div>
+      </section>
     </main>
+
+    <!-- Lightbox Fullscreen Images -->
+    <div id="img1" class="lightbox">
+      <a href="#" class="close">&times;</a>
+      <img src="photo_tanz/kurse/kindertanz.jpg" alt="Kindertanz" />
+    </div>
+
+    <div id="img2" class="lightbox">
+      <a href="#" class="close">&times;</a>
+      <img src="photo_tanz/kurse/moderner-tanz.jpg" alt="Moderner Tanz" />
+    </div>
+
+    <div id="img3" class="lightbox">
+      <a href="#" class="close">&times;</a>
+      <img src="photo_tanz/kurse/contemporary.jpg" alt="Contemporary" />
+    </div>
 
     <!-- Footer einbinden -->
     <footer class="footer">
