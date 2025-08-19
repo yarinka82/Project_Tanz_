@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Katharsis Dance.Wurzburg.</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="burger"><i class="fas fa-bars"></i></div>
+    <ul>
+      <li><a href="index.html">Startseite </a></li>
+      <li><a href="about.html">Über mich </a></li>
+      <li><a href="styles.html">Tanzrichtungen</a></li>
+      <li><a href="gallery.html">Galerie</a></li>
+      <li><a href="contact.html">Kontakte</a></li>
+      <li><a href="rules.html">Hausordnung</a></li>
+      <li><a href="impressum.html">Impressum</a></li>
+    </ul>
+  </nav>
+</header>
+<main>
+  <!-- Hero section with background video -->
+  <section class="hero">
+    <video autoplay muted loop playsinline>
+      <source src="vodeo_tanz/copy_3FCA0828-E88C-4BB9-9A73-E825B53EA70A.mp4" type="video/mp4">
+    </video>
+    <div class="hero-inner">
+ <h1>Katharsis <span>dance</span></h1>
+ <a href="https://www.instagram.com/katharsis_dance?utm_source=ig_web_button_share_sheet&igsh=YmEwMGtkYzY5aGEw " target="_blank">
+  <img src="photo_tanz/logo.png" 
+       alt="Katharsis Dance" 
+       style="height:100px; opacity:0.8; display:block; margin:auto;border-radius: 20%;">
+</a>
+      <p>Ein Raum für Ausdruck, Entwicklung und Entfaltung</p>
+      <button class="btn" id="openForm">Melden Sie sich an</button>
+    </div>
+  </section>
+</main>
+
+<!-- POPUP ФОРМА -->
+<div class="popup" id="popupForm" aria-hidden="true">
+  <div class="popup-dialog" role="dialog" aria-modal="true" aria-labelledby="formTitle">
+    <button class="popup-close" id="closePopup" aria-label="schließen">×</button>
+
+    <h2 id="formTitle" class="popup-title">Melden Sie sich an</h2>
+
+    <form id="bookingForm" action="https://formspree.io/f/irynavelchenko@gmail.com" method="POST">
+      <input type="text" name="name" placeholder="Name" required>
+      <select name="direction" required>
+        <option value="">Richtung wählen</option>
+        <option value="Gruppenunterricht">Gruppenunterricht</option>
+        <option value="Privatunterricht">Privatunterricht</option>
+      </select>
+      <input type="date" name="day" required>
+      <input type="time" name="time" required>
+      <button type="submit" class="btn">Schicken</button>
+    </form>
+
+    <p class="thanks" id="thanksMsg" style="display:none;">
+      ✅ Danke!
+    </p>
+  </div>
+</div>
+  <!-- Abonements -->
+<section class="abonements">
+  <h2>Abonnements und Preise</h2>
+  <div class="abonement-cards">
+
+    <!-- Gruppenunterricht -->
+    <div class="card">
+      <div class="card-content">
+        <h3>Gruppenunterricht</h3>
+        <p>Probestunde – 10 €</p>
+        <p>Einzelstunde (einmalig) – 15 €</p>
+        <p>Monatsabo (2× pro Woche) – 80 € (8 Einheiten)</p>
+        <p>Monatsabo (1× pro Woche) – 49 € (4 Einheiten)</p>
+      </div>
+    </div>
+
+    <!-- Privatunterricht -->
+    <div class="card">
+      <div class="card-content">
+        <h3>Privatunterricht</h3>
+        <p>Einzelunterricht (60 Min.) – 39 €</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+  
+<section class="schedule">
+  <h2>Stundenplan</h2>
+  <p>Den aktuellen Zeitplan können Sie in Google Tabellen einsehen:</p>
+  <a href="https://docs.google.com/spreadsheets/d/1LEie9GwbDSplZWHTY4T58MhJDx3YIWUkOtUtm2V_K20/edit?gid=0" 
+     target="_blank" class="btn gsheet-btn">
+    <svg class="gsheet-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#34A853">
+      <path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zm-9 14H7v-2h3v2zm0-4H7v-2h3v2zm0-4H7V7h3v2zm6 8h-4v-2h4v2zm0-4h-4v-2h4v2zm0-4h-4V7h4v2z"/>
+    </svg>
+  <span class="btn-text">Offener Zeitplan</span>
+  </a>
+</section>
+<!-- Секція сучасного слайдера -->
+<section class="modern-slider">
+  <div class="slider-wrapper">
+    <div class="slider-track">
+      <div class="slide"><img src="photo_tanz/4Y0A5768.jpg" alt="Фото 1"></div>
+      <div class="slide"><img src="photo_tanz/4Y0A5918.jpg" alt="Фото 2"></div>
+      <div class="slide"><img src="photo_tanz/DSC_2663.jpg" alt="Фото 3"></div>
+      <div class="slide"><img src="photo_tanz/DSC_2737.jpg" alt="Фото 4"></div>
+      <div class="slide"><img src="photo_tanz/DSC_3228.jpg" alt="Фото 5"></div>
+      <div class="slide"><img src="photo_tanz/DSC_3539.jpg" alt="Фото 6"></div>
+      <div class="slide"><img src="photo_tanz/DSC_3993.jpg" alt="Фото 7"></div>
+      <div class="slide"><img src="photo_tanz/DSC_3665-редакт.jpg" alt="Фото 8"></div>
+      <div class="slide"><img src="photo_tanz/DSC_3621-редакт копия.jpg" alt="Фото 9"></div>
+      <div class="slide"><img src="photo_tanz/b17c4d9a-3153-467c-b410-954de5a0d125.JPG" alt="Фото 10"></div>
+    </div>
+  </div>
+</section>
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-nav">
+    <a href="index.html">Startseite </a>
+    <a href="about.html">Über mich </a>
+    <a href="styles.html">Tanzrichtungen</a>
+    <a href="impressum.html">Impressum</a>
+  </div>
+  <div>
+    <p>© 2025 Katharsis Dance. katharsisdance@gmail.com</p>
+    <p>Instagram: <a href="https://www.instagram.com/katharsis_dance" target="_blank">@katharsis_dance</a></p>
+  </div>
+</footer>
+<!-- JS -->
+<script src="js/main.js"></script>
+
+</body>
+</html>
+
