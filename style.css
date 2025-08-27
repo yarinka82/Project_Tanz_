@@ -1,16 +1,15 @@
 /* Основні стилі */
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   margin: 0;
 }
 .rules-page header nav {
-    position: relative; /* або fixed, якщо хочеш прикріпити */
-  
+  position: relative; /* або fixed, якщо хочеш прикріпити */
 }
 .rules-page .burger {
-    position: relative;
-    top: 50px;
-    z-index: 1000; /* щоб був поверх інших елементів */
+  position: relative;
+  top: 50px;
+  z-index: 1000; /* щоб був поверх інших елементів */
 }
 
 /* Навігація */
@@ -20,7 +19,6 @@ nav ul {
   gap: 15px;
   margin: 0;
   padding: 0;
-
 }
 
 nav.active ul {
@@ -36,8 +34,9 @@ nav.active ul {
 }
 nav ul li a {
   color: #000; /* чорний текст */
-  text-decoration: none; /* прибрати підкреслення */}
-  nav ul li a:hover {
+  text-decoration: none; /* прибрати підкреслення */
+}
+nav ul li a:hover {
   color: #b57edc; /* бузковий при наведенні */
 }
 .burger {
@@ -46,7 +45,7 @@ nav ul li a {
   cursor: pointer;
 }
 
-@media(max-width:768px) {
+@media (max-width: 768px) {
   nav ul {
     display: none;
     flex-direction: column;
@@ -70,29 +69,31 @@ nav ul li a {
 
 .hero video {
   position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   z-index: -1;
 }
 
- @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Georgia:ital,wght@1,400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&family=Georgia:ital,wght@1,400&display=swap");
 
-  h1 {
-    font-family: 'Great Vibes', cursive;
-    font-size: 80px;
-    font-weight: normal;
-    text-align: center;
-    margin: 0;
-  }
+h1 {
+  font-family: "Great Vibes", cursive;
+  font-size: 80px;
+  font-weight: normal;
+  text-align: center;
+  margin: 0;
+}
 
-  h1 span {
-    display: block;
-    font-family: 'Georgia', serif;
-    font-style: italic;
-    font-size: 30px;
-    margin-top: -15px;
-  }
+h1 span {
+  display: block;
+  font-family: "Georgia", serif;
+  font-style: italic;
+  font-size: 30px;
+  margin-top: -15px;
+}
 
 /* Кнопки */
 .btn {
@@ -162,7 +163,7 @@ nav ul li a {
 /* Анімація при наведенні */
 .card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .card-content {
@@ -196,7 +197,7 @@ nav ul li a {
 
 .slide {
   flex: 0 0 auto;
-  width: 100px;   /* трохи більші фото */
+  width: 100px; /* трохи більші фото */
   height: 100px;
   border: 3px solid #b292f2; /* трохи товстіша рамка */
   border-radius: 12px;
@@ -218,8 +219,12 @@ nav ul li a {
 
 /* Анімація безкінечної прокрутки */
 @keyframes scrollSlider {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 /* Дублікат для безкінечності */
@@ -230,33 +235,50 @@ nav ul li a {
 }
 /* Popup form */
 /* BUTTONS */
-.btn{
-  display:inline-block;
-  padding:12px 22px;
-  border-radius:10px;
-  text-decoration:none; cursor:pointer;
+.btn {
+  display: inline-block;
+  padding: 12px 22px;
+  border-radius: 10px;
+  text-decoration: none;
+  cursor: pointer;
   background: var(--violet);
-  color:#e0d2dc; border:0; font-weight:600;
-  transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
-  box-shadow: 0 6px 16px rgba(181,126,220,.35);
+  color: #e0d2dc;
+  border: 0;
+  font-weight: 600;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  box-shadow: 0 6px 16px rgba(181, 126, 220, 0.35);
 }
-.btn:hover{ background: var(--violet-dark); transform: translateY(-1px); }
-.btn:active{ transform: translateY(0); }
-.btn-block{ width:100%; }
-.btn-ghost{
-  background: transparent; color: var(--violet); border:2px solid var(--violet);
-  box-shadow:none;
+.btn:hover {
+  background: var(--violet-dark);
+  transform: translateY(-1px);
 }
-.btn-ghost:hover{ background: var(--violet); color:#fff; }
+.btn:active {
+  transform: translateY(0);
+}
+.btn-block {
+  width: 100%;
+}
+.btn-ghost {
+  background: transparent;
+  color: var(--violet);
+  border: 2px solid var(--violet);
+  box-shadow: none;
+}
+.btn-ghost:hover {
+  background: var(--violet);
+  color: #fff;
+}
 
 /* POPUP */
 /* Popup base */
 .popup {
   display: none;
   position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0,0,0,0.5);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
   justify-content: center;
   align-items: center;
   z-index: 1000;
@@ -283,7 +305,8 @@ nav ul li a {
 }
 .popup-close {
   position: absolute;
-  top: 10px; right: 10px;
+  top: 10px;
+  right: 10px;
   background: transparent;
   border: none;
   font-size: 1.5rem;
@@ -296,7 +319,8 @@ form {
   flex-direction: column;
   gap: 10px;
 }
-input, select {
+input,
+select {
   padding: 8px;
   font-size: 1rem;
 }
@@ -308,126 +332,137 @@ input, select {
 
 /* Animations */
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 @keyframes slideUp {
-  from { transform: translateY(20px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
-  
- :root {
-      --bg: #F9F6FB;
-      --white: #fff;
-      --ink: #3E2C5B;
-      --accent: #9B7EBD;
-      --shadow: rgba(155, 126, 189, 0.15);
-    }
 
-    body {
-      background: var(--bg);
+:root {
+  --bg: #f9f6fb;
+  --white: #fff;
+  --ink: #3e2c5b;
+  --accent: #9b7ebd;
+  --shadow: rgba(155, 126, 189, 0.15);
+}
 
-    }
+body {
+  background: var(--bg);
+}
 
-    .rules-container {
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 0 1rem;
-    }
+.rules-container {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
 
-    .rules-container h1 {
-      text-align: center;
-      margin-bottom: 2rem;
-      font-size: 2rem;
-      color: var(--ink);
-    }
+.rules-container h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  color: var(--ink);
+}
 
-    .accordion-item {
-      background: var(--white);
-      border-radius: 12px;
-      margin-bottom: 1rem;
-      box-shadow: 0 4px 12px var(--shadow);
-      overflow: hidden;
-      transition: all 0.3s ease;
-    }
+.accordion-item {
+  background: var(--white);
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 12px var(--shadow);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
 
-    .accordion-header {
-      width: 100%;
-      text-align: left;
-      background: var(--accent);
-      color: var(--white);
-      padding: 1rem 1.2rem;
-      font-size: 1rem;
-      font-weight: 600;
-      border: none;
-      cursor: pointer;
-      transition: background 0.3s ease;
-      display: flex;
-      align-items: center;
-    }
+.accordion-header {
+  width: 100%;
+  text-align: left;
+  background: var(--accent);
+  color: var(--white);
+  padding: 1rem 1.2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  display: flex;
+  align-items: center;
+}
 
-    .accordion-header:hover {
-      background: #8669a6;
-    }
+.accordion-header:hover {
+  background: #8669a6;
+}
 
-    .accordion-header::after {
-      content: "+";
-      font-weight: bold;
-      font-size: 1.2rem;
-      margin-left: auto;
-      transition: transform 0.3s ease;
-    }
+.accordion-header::after {
+  content: "+";
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-left: auto;
+  transition: transform 0.3s ease;
+}
 
-    .accordion-item.active .accordion-header::after {
-      content: "−";
-      transform: rotate(180deg);
-    }
+.accordion-item.active .accordion-header::after {
+  content: "−";
+  transform: rotate(180deg);
+}
 
-    .accordion-content {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.4s ease, padding 0.3s ease;
-      padding: 0 1.2rem;
-      background: var(--bg);
-      font-size: 0.95rem;
-      line-height: 1.6;
-    }
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.3s ease;
+  padding: 0 1.2rem;
+  background: var(--bg);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
 
-    .accordion-item.active .accordion-content {
-      padding: 1rem 1.2rem;
-    }
+.accordion-item.active .accordion-content {
+  padding: 1rem 1.2rem;
+}
 
-    /* 📱 Мобільна адаптація */
-    @media (max-width: 600px) {
-      .rules-container {
-        margin: 1rem auto;
-        max-width: 95%;
-      }
-      .rules-container h1 {
-        font-size: 1.5rem;
-      }
-      .accordion-header {
-        font-size: 0.95rem;
-        padding: 0.9rem 1rem;
-      }
-      .accordion-content {
-        font-size: 0.9rem;
-      }
-    }
+/* 📱 Мобільна адаптація */
+@media (max-width: 600px) {
+  .rules-container {
+    margin: 1rem auto;
+    max-width: 95%;
+  }
+  .rules-container h1 {
+    font-size: 1.5rem;
+  }
+  .accordion-header {
+    font-size: 0.95rem;
+    padding: 0.9rem 1rem;
+  }
+  .accordion-content {
+    font-size: 0.9rem;
+  }
+}
 /* --- Контейнер контактів --- */
 .contact-container {
   max-width: 900px;
   margin: 50px auto;
   padding: 0 20px;
-  font-family: 'Arial', sans-serif;
+  font-family: "Arial", sans-serif;
 }
 
-.contact-container h1, .contact-container h2 {
+.contact-container h1,
+.contact-container h2 {
   text-align: center;
   color: #333;
 }
 
-.contact-container p, .contact-container a {
+.contact-container p,
+.contact-container a {
   font-size: 16px;
   line-height: 1.6;
   color: #555;
@@ -446,7 +481,7 @@ input, select {
   text-decoration: none;
   padding: 30px 20px;
   border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
   transition: transform 0.2s, box-shadow 0.2s;
   margin-top: 20px;
 }
@@ -454,7 +489,7 @@ input, select {
 .news-block h3 {
   margin-top: 0;
   font-size: 1.8rem;
-    color: white;
+  color: white;
 }
 
 .news-block p {
@@ -465,7 +500,7 @@ input, select {
 
 .news-block:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
 }
 @media (max-width: 600px) {
   .news-block {
@@ -498,7 +533,7 @@ input, select {
   text-decoration: none;
   padding: 30px 20px;
   border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
   transition: transform 0.2s, box-shadow 0.2s;
   margin-top: 20px;
 }
@@ -515,7 +550,7 @@ input, select {
 
 .news-block:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
 }
 
 /* Мобільні новини (iframe) */
@@ -532,23 +567,21 @@ input, select {
   .mobile-news {
     display: block; /* показуємо iframe на мобільних */
   }
-  
+
   .news-block h3 {
     font-size: 1.4rem;
   }
-  
+
   .news-block p {
     font-size: 0.9rem;
   }
-  
+
   .news-frame iframe {
     height: 400px;
   }
 }
 
 /* --- Адаптивність --- */
-
-
 
 /* Footer */
 .footer {
