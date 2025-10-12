@@ -19,7 +19,7 @@ body {
   position: relative;
   min-height: 70vh;
   background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    url("/photo_tanz/über_mich/über_mich-hero.jpg") center/cover no-repeat;
+    url("/photo_tanz/über_mich/katja_über_mich_hero.jpg") center/cover no-repeat;
   display: flex;
   align-items: start;
   justify-content: flex-start; /* чтобы текст был слева */
