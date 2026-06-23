@@ -1,0 +1,129 @@
+/* Основні стилі */
+
+.modern-slider {
+  padding: 20px 10px;
+  background: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.slider-wrapper {
+  display: flex;
+  padding: 20px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.slider-track {
+  display: flex;
+  gap: 15px;
+  animation: scrollSlider 25s linear infinite;
+  width: 100%;
+}
+
+.slide {
+  flex: 0 0 auto;
+  width: 120px;
+  height: 100px;
+  border: 1px solid var(--clr-bg-btn);
+  border-radius: 12px;
+  overflow: hidden;
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Hover ефект */
+.slide:hover,
+.slide:focus-visible {
+  transform: scale(1.1);
+  border-color: var(--clr-bg-btn-hover);
+}
+
+/* Анімація безкінечної прокрутки */
+/* @keyframes scrollSlider {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+} */
+
+/* Дублікат для безкінечності */
+.slider-track::after {
+  content: "";
+  display: inline-block;
+  width: 100%;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.preview-modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  transform: translate(calc(var(--origin-x) - 50%), calc(var(--origin-y) - 50%))
+    scale(0);
+  aspect-ratio: 3 / 4;
+  height: 85vh;
+  border: 1px solid var(--clr-bg-btn);
+  border-radius: 20px;
+  overflow: hidden;
+  z-index: 999;
+  box-shadow: 0 0 20px 6px rgba(var(--clr-rgb-btn), 0.5);
+  /* transform-origin: var(--origin-x) var(--origin-y); */
+  transition:
+    transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1),
+    opacity 0.5s ease;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.imgModal {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.preview-modal.active {
+  transform: translate(calc(50vw - 50%), calc(50vh - 50%)) scale(1);
+  pointer-events: auto;
+  /* transform-origin: center center; */
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.btnNav,
+.btnClose {
+  display: none;
+}

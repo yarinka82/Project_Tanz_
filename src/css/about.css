@@ -1,0 +1,229 @@
+@import "./style.css";
+
+/* -- Hero -- */
+.hero-ich {
+  position: relative;
+  min-height: 70vh;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("/image/über_mich/katja_über_mich_hero.jpg") center/cover no-repeat;
+  display: flex;
+  align-items: start;
+  justify-content: flex-start;
+}
+
+.hero-ich-overlay {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  padding-left: 4%;
+}
+
+.hero-ich-content {
+  color: var(--clr-font-white);
+  max-width: 500px;
+}
+
+.hero-ich-content h1 {
+  font-size: 2.8rem;
+  padding: 20px;
+}
+
+.hero-ich-content p {
+  font-size: 1.3rem;
+}
+
+/* -- About Section -- */
+
+.about {
+  padding-block: 20px;
+  overflow: hidden;
+}
+
+.about-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.about-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  opacity: 0;
+  transform: translateX(70%) scale(0.4);
+  transition:
+    opacity 1.2s ease,
+    transform 1.2s ease;
+}
+
+.about-wrapper > :nth-child(2n) {
+  transform: translateX(-70%) scale(0.4);
+}
+
+.about-block.visible {
+  opacity: 1;
+  transform: translateX(0) scale(1);
+}
+
+/* -- Photos -- */
+.about-photos {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  padding: 10px;
+  order: 2;
+}
+
+.about-photos img {
+  border-radius: 12px;
+  width: 100%;
+  max-width: 90vh;
+  height: 100%;
+  max-height: 80vh;
+  object-fit: cover;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
+}
+
+.about-photos:hover,
+.about-photos:focus-visible {
+  transform: scale(1.05);
+}
+
+.about-photos:hover img,
+.about-photos:focus img {
+  box-shadow: 0 0 25px rgba(163, 70, 170, 0.8);
+}
+
+/* -- Text -- */
+.about-text {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  justify-content: space-evenly;
+  order: 1;
+}
+
+.text-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 25px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  border: 1px solid rgba(var(--clr-font-rgb-primary), 0.05);
+  box-shadow: 0 4px 12px rgba(var(--clr-font-rgb-primary), 0.2);
+  opacity: 0;
+  transform: translateX(50px);
+  animation: fadeInRight 1s forwards;
+
+  &:hover,
+  &:focus-visible {
+    transform: translate(10px, -10px);
+    scale: 1.03;
+    border: 1px solid rgba(var(--clr-font-rgb-primary), 0.1);
+    box-shadow: 0 4px 12px rgba(var(--clr-font-rgb-primary), 0.4);
+  }
+}
+
+.about-text span {
+  color: var(--clr-bg-btn);
+  font-weight: bold;
+}
+
+/* -- Animation -- */
+@keyframes fadeInRight {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* -- Media Queries -- */
+
+/* -- Mobil -- */
+@media (max-width: 480px) {
+  .hero-ich-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-ich-content p {
+    font-size: 1rem;
+  }
+
+  .text-card {
+    font-size: 1rem;
+    padding: 15px;
+  }
+
+  .about-wrapper {
+    flex-direction: column;
+  }
+
+  .about-photos {
+    flex-direction: column;
+  }
+
+  .about-photos img {
+    max-width: 100%;
+  }
+}
+
+/* -- Tablet -- */
+@media (max-width: 768px) {
+  .about-wrapper {
+    flex-direction: column;
+  }
+
+  .text-card {
+    font-size: 1rem;
+  }
+
+  юabout-text {
+    flex: 0 0 60%;
+  }
+}
+
+/* -- Desktop Large -- */
+@media (min-width: 1020px) {
+  .hero-ich-content h1 {
+    font-size: 3.2rem;
+  }
+  .hero-ich-content p {
+    font-size: 1.5rem;
+  }
+
+  .text-card {
+    font-size: 1.125rem;
+  }
+
+  .about-block {
+    flex-direction: row;
+  }
+
+  .about-photos {
+    flex: 0 0 30%;
+    max-width: 30%;
+    order: 1;
+  }
+
+  .about-block:nth-child(even) .about-photos {
+    order: 2;
+  }
+  .about-block:nth-child(even) .about-text {
+    order: 1;
+  }
+}

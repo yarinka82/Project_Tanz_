@@ -1,0 +1,8 @@
+/* Common styles */
+@import "./common/reset.css";
+@import "./common/container.css";
+@import "./common/base.css";
+@import "./common/header.css";
+@import "./common/form.css";
+@import "./common/footer.css";
+@import "./common/lightbox.css";

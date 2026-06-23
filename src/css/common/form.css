@@ -1,0 +1,131 @@
+/* .btn-block {
+  width: 100%;
+}
+.btn-ghost {
+  background: transparent;
+  color: var(--violet);
+  border: 2px solid var(--violet);
+  box-shadow: none;
+}
+
+.btn-ghost:hover,
+.btn-ghost:focus  {
+  background: var(--violet);
+  color: #fff;
+} */
+
+/* POPUP */
+/* Popup base */
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.637);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+.popup.show {
+  display: flex;
+  animation: fadeIn 0.3s ease;
+}
+
+/* Popup content */
+.popup-dialog {
+  background: white;
+  padding: 20px;
+  border-radius: 18px;
+  border: 2px solid #8e44ad;
+  width: 100%;
+  max-width: 400px;
+  animation: slideUp 0.3s ease;
+  position: relative;
+}
+.popup-title {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.popup-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+
+  &:hover,
+  &:focus {
+    color: red;
+    scale: 1.05;
+  }
+}
+
+/* Form styling */
+form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 2px;
+}
+
+input,
+select {
+  padding: 8px;
+  font-size: 1rem;
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid #8e44ad;
+  outline: none;
+}
+
+.input-wrap {
+  width: 100%;
+}
+
+.error {
+  display: block;
+  font-size: 12px;
+  font-weight: 400;
+  padding: 0 12px 2px;
+  color: rgb(224, 21, 21);
+  height: 20px;
+  width: 100%;
+}
+
+form .btn {
+  max-width: 100%;
+  margin-top: 10px;
+}
+
+.info {
+  height: 40px;
+}
+
+.thanks {
+  margin-top: 10px;
+  color: green;
+  text-align: center;
+}
+
+.errors {
+  padding: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  color: rgb(224, 21, 21);
+  text-align: center;
+}
+
+.btnClosed {
+  display: inline-block;
+  padding: 8px;
+  border: none;
+  border-radius: 12px;
+  background: darkviolet;
+  color: whitesmoke;
+}

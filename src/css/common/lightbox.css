@@ -1,0 +1,68 @@
+/* ===== Lightbox fullscreen ===== */
+
+.lightbox {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: none;
+  background: transparent;
+  max-width: 90vw;
+  max-height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: zoom-out;
+  border-radius: 20px;
+  border-top-right-radius: 10px;
+  overflow: hidden;
+}
+
+.lightbox:not([open]) {
+  display: none;
+}
+
+.lightbox::backdrop {
+  background-color: rgba(19, 1, 19, 0.849);
+  cursor: zoom-out;
+}
+
+.lightbox img {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 12px;
+  box-shadow: 0 0 25px rgba(163, 70, 170, 0.8);
+}
+
+.lightbox:target {
+  display: flex;
+}
+
+.lightbox-close {
+  position: fixed;
+  top: 0;
+  right: 0;
+  border-radius: 50%;
+  padding: 3px;
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 20px;
+  background-color: rgba(44, 40, 40, 0.856);
+  border: 2px solid rgba(255, 255, 255, 0.384);
+  backdrop-filter: blur(4px);
+  cursor: pointer;
+  outline: none;
+  z-index: 2;
+
+  &:hover {
+    background-color: var(-clr-bg-btn);
+    color: rgb(211, 107, 218);
+  }
+}
+
+.img-lightbox {
+  cursor: zoom-in;
+}

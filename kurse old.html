@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tanzrichtungen | Katharsis Dance</title>
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Normalize -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/3.0.1/modern-normalize.min.css"
+      integrity="sha512-q6WgHqiHlKyOqslT/lgBgodhd03Wp4BEqKeW6nNtlOY4quzyG3VoQKFrieaCeSnuVseNKRGpGeDU3qPmabCANg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="icon" href="favicon.webp" sizes="any" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/src/css/kurse.css" />
+  </head>
+  <body>
+    <!-- Header einbinden -->
+    <load src="/src/partials/header.html" />
+
+    <main>
+      <!-- Hero Section -->
+      <section class="hero">
+        <div class="hero-overlay">
+          <div class="hero-content">
+            <h1>Tanzrichtungen</h1>
+            <p>Tanz, der die Seele befreit</p>
+            <button
+              type="button"
+              aria-label="Anmeldung öffnen"
+              data-openform
+              class="btn"
+            >
+              Anmeldung
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Kindertanz -->
+      <section class="kurs-section">
+        <div class="container kurs-container">
+          <article class="kurs-card">
+            <div class="kurs-image" id="card1">
+              <!-- <a href="#img1"> -->
+              <img
+                class="img-lightbox"
+                src="/image/kurse/kindertanz.jpg"
+                alt="Kindertanz"
+              />
+              <!-- </a> -->
+            </div>
+            <div class="kurs-text">
+              <h2>Kindertanz</h2>
+              <p>
+                Kindertanz fördert nicht nur die Bewegung, sondern auch die
+                Fantasie und das Körpergefühl, es ist eine spielerische Reise
+                zur Musik.<br />
+                Hier werden Koordination, Rhythmusgefühl, Kraft, Ausdauer und
+                Flexibilität ganz nebenbei trainiert - mit viel Spaß und noch
+                mehr Kreativität.<br />
+                Die Kinder springen, drehen, rollen, balancieren und entdecken
+                dabei ihren Körper und ihre Ausdruckskraft.<br />
+                Jede Stunde ist voller Fantasie, Musik und kleinen Abenteuern.
+              </p>
+            </div>
+          </article>
+          <!-- Moderner Tanz -->
+          <article class="kurs-card reverse" id="card2">
+            <div class="kurs-image">
+              <a href="#img2">
+                <img
+                  class="img-lightbox"
+                  src="/image/kurse/moderner-tanz.jpg"
+                  alt="Moderner Tanz"
+                />
+              </a>
+            </div>
+            <div class="kurs-text">
+              <h2>Moderner Tanz für Kinder & Jugendliche</h2>
+              <p>
+                Die Tanzrichtung bietet Kindern und Jugendlichen einen Raum, in
+                dem sie ihre Zeit sinnvoll verbringen, ihre körperlichen
+                Fähigkeiten verbessern und ihr Potenzial durch Kunst entfalten
+                können.<br />
+                Die Unterrichtseinheiten verbinden Elemente aus Akrobatik,
+                Ballett, Yoga und kreativer Bewegung - und ermöglichen es den
+                Teilnehmenden, sich auszudrücken, innere Stärke zu entwickeln
+                und ganz sie selbst zu sein.
+              </p>
+            </div>
+          </article>
+          <!-- Contemporary -->
+          <article class="kurs-card" id="card3">
+            <div class="kurs-image">
+              <!-- <a href="#img3"> -->
+              <img
+                class="img-lightbox"
+                src="/image/kurse/contemporary.jpg"
+                alt="Contemporary"
+              />
+              <!-- </a> -->
+            </div>
+            <div class="kurs-text">
+              <h2>Contemporary für Erwachsene</h2>
+              <p>
+                Einatmen, loslassen, bei dir ankommen.<br />
+                Der Alltag ist oft voll - hier darfst du abschalten. Wir bewegen
+                uns bewusst, kräftigen den Körper, lassen den Kopf frei werden.
+                Mal fließend, mal kraftvoll, mal ganz ruhig.<br />
+                Dieser Kurs ist für dich, wenn du wieder spüren willst: Ich bin
+                da. Ich bin stark. Ich darf tanzen - so, wie ich bin.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+    <load src="/src/partials/lightbox.html" />
+    <!-- Footer -->
+    <load src="/src/partials/footer.html" />
+    <load src="/src/partials/form.html" />
+    <script type="module" src="/src/js/index.js"></script>
+  </body>
+</html>

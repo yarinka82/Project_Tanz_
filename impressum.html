@@ -1,22 +1,16 @@
-<header>
-<link rel="stylesheet" href="styles/style.css"> 
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-
-    <nav>
-      <ul>
-        <li><a href="index.html">Startseite</a></li>
-        <li><a href="about.html">Über mich</a></li>
-        <li><a href="kurse.html">Tanzrichtungen</a></li>
-        <li><a href="gallery.html">Galerie</a></li>
-        <li><a href="contact.html">Kontakt</a></li>
-        <li><a href="rules.html">Hausordnung</a></li>
-      </ul>
-    </nav>
-  </header>
-
-
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <link rel="icon" href="favicon.webp" sizes="any" />
+  
+    <link rel="stylesheet" href="/src/css/style.css" /> 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  </head>
+  <body>
+<load src="/src/partials/header.html" />
+<main>
   <section class="kontakt-section">
     <div class="container">
       <h1>Impressum</h1>
@@ -61,29 +55,9 @@ Deutschland</p>
 	</div><!-- .entry-content -->
     </div>
   </section>
-
-<footer class="footer">
-  <div class="footer-container">
-    <div class="footer-logo">
-      <h2>Katharsis Dance</h2>
-      <p>ein Raum für Ausdruck, Entwicklung und Entfaltung</p>
-    </div>
-    <div class="footer-nav">
-        <a href="index.html">Startseite</a>
-        <a href="about.html">Über mich</a>
-        <a href="kurse.html">Tanzrichtungen</a>
-        <a href="contact.html">Kontakt</a>
-    </div>
-    <div class="footer-social">
-      <a href="#"><img src="img/insta.svg" alt="Instagram" target="_blank">
-      <i class="fab fa-instagram fa-2x" style="color:#E1306C;"></i></a>
-      <a href="#"><img src="img/facebook.svg" alt="Facebook" target="_blank">
-      <i class="fab fa-facebook fa-2x" style="color:#1877F2;"></i></a>
-      <a href="#"><img src="#"><img src="img/youtube.svg" alt="YouTube" /></a>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <p>&copy; 2025 | <a href="datenschutz.html">Datenschutz</a> | <a href="impressum.html">Impressum</a></p>
-    <a href="#" class="to-top">↑ Zum Anfag</a>
-  </div>
-</footer>
+</main>
+ <load src="/src/partials/footer.html" />
+<load src="/src/partials/form.html" />
+   <script type="module" src="/src/js/index.js"></script>
+  </body>
+</html>

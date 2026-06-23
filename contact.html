@@ -1,74 +1,63 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kontakte – Katharsis Dance</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="about.css">
-  <link rel="stylesheet" href="contact.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-</head>
-<body class="contact-page">
-  <header>
-    <nav>
-      <div class="burger"><i class="fas fa-bars"></i></div>
-      <ul>
-        <li><a href="index.html">Startseite</a></li>
-        <li><a href="about.html">Über mich</a></li>
-        <li><a href="kurse.html">Tanzrichtungen</a></li>
-        <li><a href="gallery.html">Galerie</a></li>
-        <li><a href="contact.html">Kontakte</a></li>
-        <li><a href="rules.html">Hausordnung</a></li>
-        <li><a href="impressum.html">Impressum</a></li>
-      </ul>
-    </nav>
-  </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kontakte – Katharsis Dance</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="icon" href="favicon.webp" sizes="any" />
+    <link rel="stylesheet" href="/src/css/contact.css" />
+  </head>
+  <body class="contact-page">
+    <main>
+      <load src="/src/partials/header.html" />
+      <section class="contact-container">
+        <h1>Kontaktiere uns</h1>
+        <p>
+          <i class="fas fa-envelope"></i>
+          <a href="mailto:katharsisdance@gmail.com">katharsisdance@gmail.com</a>
+        </p>
+        <p>
+          <i class="fas fa-phone"></i>
+          <a href="tel:+49123456789">+49 123 456 789</a>
+        </p>
+        <p>
+          <i class="fab fa-instagram"></i>
+          <a href="https://www.instagram.com/katharsis_dance" target="_blank"
+            >@katharsis_dance</a
+          >
+        </p>
+        <h2>Neuigkeiten</h2>
 
-  <main>
-   <section class="contact-container">
-  <h1>Kontaktiere uns</h1>
-  <p><i class="fas fa-envelope"></i> 
-     <a href="mailto:katharsisdance@gmail.com">katharsisdance@gmail.com</a></p>
-  <p><i class="fas fa-phone"></i> 
-     <a href="tel:+49123456789">+49 123 456 789</a></p>
-  <p><i class="fab fa-instagram"></i> 
-     <a href="https://www.instagram.com/katharsis_dance" target="_blank">@katharsis_dance</a></p>
-      <h2>Neuigkeiten</h2>
+        <!-- Бузковий блок для новин -->
+        <a
+          href="https://docs.google.com/document/d/1GE1EqMfFRNJT7a6xfnLsHf4_ucANQ3iW1EbDFsToXVQ/edit?usp=sharing"
+          target="_blank"
+          class="news-block desktop-news"
+        >
+          <h3>Neueste Nachrichten</h3>
+          <p>
+            Klicken Sie hier, um alle Neuigkeiten zu Google Docs anzuzeigen >>>
+          </p>
+        </a>
 
-<!-- Бузковий блок для новин -->
-<a href="https://docs.google.com/document/d/1GE1EqMfFRNJT7a6xfnLsHf4_ucANQ3iW1EbDFsToXVQ/edit?usp=sharing" 
-   target="_blank" class="news-block desktop-news">
-  <h3>Neueste Nachrichten</h3>
-  <p>Klicken Sie hier, um alle Neuigkeiten zu Google Docs anzuzeigen >>></p>
-</a>
+        <!-- Адаптивний iframe для мобільних -->
+        <div class="news-frame mobile-news">
+          <iframe
+            src="https://docs.google.com/document/d/1GE1EqMfFRNJT7a6xfnLsHf4_ucANQ3iW1EbDFsToXVQ/edit?usp=sharing"
+            width="100%"
+            height="500"
+            style="border: none; border-radius: 12px"
+          >
+          </iframe>
+        </div>
+      </section>
+    </main>
 
-<!-- Адаптивний iframe для мобільних -->
-<div class="news-frame mobile-news">
-  <iframe 
-    src="https://docs.google.com/document/d/1GE1EqMfFRNJT7a6xfnLsHf4_ucANQ3iW1EbDFsToXVQ/edit?usp=sharing" 
-    width="100%" 
-    height="500" 
-    style="border:none; border-radius:12px;">
-  </iframe>
-</div>
-
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="footer-nav">
-      <a href="index.html">Startseite</a>
-      <a href="about.html">Über mich</a>
-      <a href="kurse.html">Tanzrichtungen</a>
-      <a href="impressum.html">Impressum</a>
-    </div>
-    <div>
-      <p>© 2025 Katharsis Dance. katharsisdance@gmail.com</p>
-      <p>Instagram: <a href="https://www.instagram.com/katharsis_dance" target="_blank">@katharsis_dance</a></p>
-    </div>
-  </footer>
-  <script src="main.js" defer></script>
-</body>
+    <load src="/src/partials/footer.html" />
+    <script type="module" src="/src/js/header/header.js"></script>
+  </body>
 </html>
-

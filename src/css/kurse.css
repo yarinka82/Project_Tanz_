@@ -1,0 +1,198 @@
+@import "./style.css";
+
+.kurs-section {
+  overflow: hidden;
+}
+
+/* ===== Hero Section ===== */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("/image/kurse/katja-hero.jpg") center/cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px;
+  color: #fff;
+}
+
+.hero h1 {
+  font-family: "Pacifico", cursive;
+  font-size: 40px;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+
+  @media (min-width: 768px) {
+    font-size: 52px;
+  }
+}
+
+.hero p {
+  font-size: 24px;
+  margin: 16px 0 25px;
+  max-width: 700px;
+}
+
+/* Button Hero */
+
+.hero .btn {
+  position: absolute;
+  right: 40px;
+  bottom: 40px;
+  width: auto;
+  padding: 12px 24px;
+  width: 200px;
+}
+
+/* Mobile Hero */
+@media (max-width: 768px) {
+  .hero .btn {
+    position: static;
+    margin-top: 25px;
+  }
+}
+
+@media (min-width: 1024px) {
+  main.container {
+    margin: 0;
+    padding: 0 20px;
+  }
+}
+
+/* ===== Kurs Cards Desktop Layout ===== */
+.kurs-card {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin: 40px 0;
+  padding: 20px 0;
+  align-items: center;
+  transition: transform 1s ease-in-out;
+}
+
+/* .kurs-card:nth-of-type(odd) {
+  transform: translate(-70%) scale(0.5);
+}
+
+.kurs-card:nth-of-type(even) {
+  transform: translate(70%) scale(0.5);
+}
+
+.kurs-card.visible {
+  transform: translate(0) scale(1);
+  opacity: 1;
+} */
+
+/* img */
+.kurs-image {
+  /* flex: 1; */
+  width: auto;
+  max-height: 80vh;
+  opacity: 0;
+  transition:
+    transform 1s ease-in-out,
+    opacity 0.3s ease;
+}
+
+.kurs-image img {
+  width: 100%;
+  height: 100%;
+  max-width: 480px;
+  max-height: 80vh;
+  border-radius: 15px;
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
+  cursor: zoom-in;
+}
+
+.kurs-image img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 25px 6px rgba(163, 70, 170, 0.8);
+}
+
+/* Текст */
+.kurs-text {
+  flex: 1;
+  padding: 20px;
+  color: var(--clr-font-main-primary);
+  background: var(--clr-bg-card);
+  border: 1px solid var(--clr-bg-card);
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  transition:
+    transform 1s ease-in-out,
+    opacity 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s;
+  opacity: 0;
+  transform: translate(0) scale(1);
+}
+
+.kurs-text h2 {
+  margin-bottom: 15px;
+  font-size: 26px;
+}
+
+.kurs-text p {
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+.p-phrase {
+  font-weight: 500;
+  margin-bottom: 16px;
+  text-align: center;
+  opacity: 0.95;
+}
+
+.kurs-card > :nth-child(1) {
+  transform: translate(-70%) scale(0.5);
+  transition: transform 0.6s ease-out;
+}
+
+.kurs-card > :nth-child(2) {
+  transform: translate(70%) scale(0.5);
+  transition: transform 0.6s ease-out;
+}
+
+@media (min-width: 1024px) {
+  .kurs-card {
+    flex-direction: row;
+  }
+
+  .kurs-card:nth-of-type(even) {
+    flex-direction: row-reverse;
+  }
+
+  .kurs-card:nth-of-type(even) > :nth-child(1) {
+    transform: translate(70%) scale(0.5);
+    transition: transform 0.6s ease-out;
+  }
+
+  .kurs-card:nth-of-type(even) > :nth-child(2) {
+    transform: translate(-70%) scale(0.5);
+    transition: transform 0.6s ease-out;
+  }
+}
+
+.kurs-card .kurs-text.visible {
+  opacity: 1;
+  transform: translate(0) scale(1);
+}
+
+.kurs-card .kurs-image.visible {
+  opacity: 1;
+  transform: translate(0) scale(1);
+}
+
+.kurs-card .kurs-text:hover,
+.kurs-card .kurs-text:focus-visible {
+  transform: translate(0, -4px) scale(1.02);
+  box-shadow: 0 0 20px rgba(163, 70, 170, 0.5);
+  border-color: var(--clr-link-hover);
+}

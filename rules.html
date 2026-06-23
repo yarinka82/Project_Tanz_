@@ -1,11 +1,11 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hausordnung – Katharsis Dance</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="/css/about.css" />
+    <title>Hausordnung - Katharsis Dance</title>
+    <link rel="stylesheet" href="/src/css/rules.css" />
+    <!-- <link rel="stylesheet" href="/css/about.css" /> -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -13,121 +13,21 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link rel="icon" href="favicon.webp" sizes="any" />
   </head>
   <body class="rules-page">
-    <header>
-      <nav>
-        <div class="burger"><i class="fas fa-bars"></i></div>
-        <ul>
-          <li><a href="index.html">Startseite </a></li>
-          <li><a href="about.html">Über mich </a></li>
-          <li><a href="kurse.html">Tanzrichtungen</a></li>
-          <li><a href="gallery.html">Galerie</a></li>
-          <li><a href="contact.html">Kontakte</a></li>
-          <li><a href="rules.html">Hausordnung</a></li>
-          <li><a href="impressum.html">Impressum</a></li>
-        </ul>
-      </nav>
-    </header>
+    <load src="/src/partials/header.html" />
     <main>
-      <section class="rules-container">
-        <h1>Hausordnung der Tanzschule</h1>
-
-        <div class="accordion">
-          <div class="accordion-item">
-            <button class="accordion-header">
-              1. Pünktlichkeit und Teilnahme
-            </button>
-            <div class="accordion-content">
-              <p>
-                Die Kursteilnehmer sollen pünktlich zum Unterricht erscheinen.
-                Wiederholtes Zuspätkommen stört den Unterrichtsablauf und sollte
-                vermieden werden.
-              </p>
-            </div>
-          </div>
-
-          <div class="accordion-item">
-            <button class="accordion-header">2. Kleidung und Hygiene</button>
-            <div class="accordion-content">
-              <p>
-                Zum Unterricht ist bequeme, dem Tanzstil entsprechende Kleidung
-                zu tragen, die im Voraus mit der Lehrkraft abgesprochen wurde.
-                Aus hygienischen Gründen ist das Tanzen nur mit sauberen
-                Tanzschuhe/Socken oder barfuß erlaubt. Lange Haare sollten
-                zusammengebunden sein.
-              </p>
-            </div>
-          </div>
-
-          <div class="accordion-item">
-            <button class="accordion-header">3. Verhalten im Unterricht</button>
-            <div class="accordion-content">
-              <p>
-                Den Anweisungen der Lehrkraft ist Folge zu leisten. Ein
-                respektvoller und freundlicher Umgang miteinander ist
-                selbstverständlich.
-              </p>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <button class="accordion-header">
-              1. Pünktlichkeit und Teilnahme
-            </button>
-            <div class="accordion-content">
-              <p>
-                Die Kursteilnehmer sollen pünktlich zum Unterricht erscheinen.
-                Wiederholtes Zuspätkommen stört den Unterrichtsablauf und sollte
-                vermieden werden.
-              </p>
-            </div>
-          </div>
-
-          <div class="accordion-item">
-            <button class="accordion-header">2. Kleidung und Hygiene</button>
-            <div class="accordion-content">
-              <p>
-                Zum Unterricht ist bequeme, dem Tanzstil entsprechende Kleidung
-                zu tragen, die im Voraus mit der Lehrkraft abgesprochen wurde.
-                Aus hygienischen Gründen ist das Tanzen nur mit sauberen
-                Tanzschuhe/Socken oder barfuß erlaubt. Lange Haare sollten
-                zusammengebunden sein.
-              </p>
-            </div>
-          </div>
-
-          <div class="accordion-item">
-            <button class="accordion-header">3. Verhalten im Unterricht</button>
-            <div class="accordion-content">
-              <p>
-                Den Anweisungen der Lehrkraft ist Folge zu leisten. Ein
-                respektvoller und freundlicher Umgang miteinander ist
-                selbstverständlich.
-              </p>
-            </div>
-          </div>
-          <!-- Додайте решту пунктів 4–14 за цим же шаблоном -->
+      <section>
+        <div class="rules-container">
+          <h1>Hausordnung der Tanzschule</h1>
+          <ul class="accordion"></ul>
         </div>
       </section>
     </main>
     <!-- Footer -->
-    <footer class="footer">
-      <div class="footer-nav">
-        <a href="index.html">Startseite </a>
-        <a href="about.html">Über mich </a>
-        <a href="kurse.html">Tanzrichtungen</a>
-        <a href="impressum.html">Impressum</a>
-      </div>
-      <div>
-        <p>© 2025 Katharsis Dance. katharsisdance@gmail.com</p>
-        <p>
-          Instagram:
-          <a href="https://www.instagram.com/katharsis_dance" target="_blank"
-            >@katharsis_dance</a
-          >
-        </p>
-      </div>
-    </footer>
-    <script src="./js/main.js" defer></script>
+    <load src="/src/partials/footer.html" />
+    <load src="/src/partials/form.html" />
+    <script type="module" src="/src/js/rulles/rulles.js"></script>
   </body>
 </html>

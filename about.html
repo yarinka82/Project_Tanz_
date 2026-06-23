@@ -1,9 +1,13 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Katja - Über mich | Katharsis Dance</title>
+    <meta
+      name="description"
+      content="Lerne Katja kennen – Tanzpädagogin und Gründerin von Katharsis Dance. Erfahre mehr über ihren Weg, ihre Philosophie und ihre Leidenschaft für den Tanz."
+    />
 
     <!-- Fonts & Icons -->
     <link
@@ -11,18 +15,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
 
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="stylesheet" href="/src/css/fonts.css" />
 
     <!-- Normalize -->
     <link
@@ -32,142 +25,121 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link rel="icon" href="favicon.webp" sizes="any" />
 
     <!-- CSS -->
-    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="/src/css/about.css" />
   </head>
   <body>
     <!-- Header einbinden -->
-    <header>
-      <nav>
-        <div class="burger"><i class="fas fa-bars"></i></div>
-        <ul>
-          <li><a href="index.html">Startseite </a></li>
-          <li><a href="about.html">Über mich </a></li>
-          <li><a href="kurse.html">Tanzrichtungen</a></li>
-          <li><a href="gallery.html">Galerie</a></li>
-          <li><a href="contact.html">Kontakte</a></li>
-          <li><a href="rules.html">Hausordnung</a></li>
-          <li><a href="impressum.html">Impressum</a></li>
-        </ul>
-      </nav>
-    </header>
+    <load src="/src/partials/header.html" />
 
-    <!-- Hero Section -->
-    <section class="hero-ich">
-      <div class="hero-ich-overlay">
-        <div class="hero-ich-content">
-          <h1>Über mich</h1>
+    <main>
+      <!-- Hero Section -->
+      <section class="hero-ich">
+        <div class="container hero-ich-overlay">
+          <div class="hero-ich-content">
+            <h1>Über mich</h1>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <main class="container">
       <!-- photos + text -->
       <section class="about">
-        <div class="about-wrapper">
-          <!-- Photos -->
-          <div class="about-photos">
-            <img
-              src="/photo_tanz/über_mich/katja_2.jpg"
-              alt="Katja in Tanzstudio"
-            />
-            <img
-              src="/photo_tanz/über_mich/katja_1.jpg"
-              alt="Katja in Ballettstudio"
-            />
-            <img
-              src="/photo_tanz/über_mich/katja_3.jpg"
-              alt="Katja in Tanzunterricht"
-            />
-          </div>
-          <!-- Text -->
-          <div class="about-text">
-            <div class="text-card">
-              <p>
-                Mein Name ist Katja, ich bin 22 Jahre alt, und Tanzen ist meine
-                größte Leidenschaft - schon seit vielen Jahren. Als ich zum
-                ersten Mal in einem Tanzstudio stand, habe ich gespürt: Das ist
-                mein Ort. Seitdem begleitet mich der Tanz durch alle Phasen
-                meines Lebens.
-              </p>
-            </div>
-            <div class="text-card">
-              <p>
-                Für mich wurde Tanzen weit mehr als nur eine Quelle von Freude
-                und guter körperlicher Verfassung. Es half mir, mich selbst zu
-                entdecken und als Persönlichkeit zu wachsen. Es war ein Weg zur
-                Selbstverwirklichung, zum Selbstwertgefühl und zur
-                Selbstsicherheit, die ich sehr schätze.
-              </p>
-            </div>
-            <div class="text-card">
-              <p>
-                Heute, nach fünf Jahren Erfahrung im Unterrichten von Modernem
-                Tanz und Kindertanz, möchte ich meine Liebe zum Tanz an andere
-                weitergeben - egal ob Erwachsene oder Kinder - und ihnen die
-                Welt des Tanzes ebenso eröffnen, wie sie sich mir einst
-                eröffnete.
-              </p>
+        <div class="container">
+          <div class="about-wrapper">
+            <div class="about-block">
+              <div class="about-photos">
+                <img
+                  class="img-lightbox"
+                  src="/image/über_mich/katja_2.jpg"
+                  alt="Katja in Tanzstudio"
+                />
+              </div>
+              <div class="about-text">
+                <p class="text-card">
+                  Mein Name ist Katja, ich bin 22 Jahre alt, und Tanzen ist
+                  meine größte Leidenschaft - schon seit vielen Jahren. Als ich
+                  zum ersten Mal in einem Tanzstudio stand, habe ich gespürt:
+                  Das ist mein Ort. Seitdem begleitet mich der Tanz durch alle
+                  Phasen meines Lebens.
+                </p>
+                <p class="text-card">
+                  Für mich wurde Tanzen weit mehr als nur eine Quelle von Freude
+                  und guter körperlicher Verfassung. Es half mir, mich selbst zu
+                  entdecken und als Persönlichkeit zu wachsen. Es war ein Weg
+                  zur Selbstverwirklichung, zum Selbstwertgefühl und zur
+                  Selbstsicherheit, die ich sehr schätze.
+                </p>
+              </div>
             </div>
 
-            <div class="text-card">
-              <p>
-                Moderner Tanz bedeutet für mich Freiheit - in der Bewegung, in
-                der Fantasie und im Ausdruck.
-              </p>
+            <div class="about-block">
+              <div class="about-photos">
+                <img
+                  class="img-lightbox"
+                  src="/image/über_mich/katja_1.jpg"
+                  alt="Katja in Ballettstudio"
+                />
+              </div>
+              <div class="about-text">
+                <p class="text-card">
+                  Heute, nach fünf Jahren Erfahrung im Unterrichten von Modernem
+                  Tanz und Kindertanz, möchte ich meine Liebe zum Tanz an andere
+                  weitergeben - egal ob Erwachsene oder Kinder - und ihnen die
+                  Welt des Tanzes ebenso eröffnen, wie sie sich mir einst
+                  eröffnete.
+                </p>
+                <p class="text-card">
+                  Moderner Tanz bedeutet für mich Freiheit - in der Bewegung, in
+                  der Fantasie und im Ausdruck.
+                </p>
+                <p class="text-card">
+                  Meine pädagogische Grundlage habe ich durch mein Studium an
+                  der Donbass Staatlichen Pädagogischen Universität gelegt, wo
+                  ich den Bachelorabschluss in Grundschulpädagogik mit dem
+                  Wahlfach Kunst erworben habe.
+                </p>
+              </div>
             </div>
-            <div class="text-card">
-              <p>
-                Ich unterrichte mit viel Freude, Geduld und Verantwortung. Dabei
-                ist es mir besonders wichtig auf jede Tänzerin und jeden Tänzer
-                individuell einzugehen, sie zu unterstützen und zu motivieren.
-                Ich möchte meinen Schüler:innen mitgeben, wie man lernt, Ziele
-                zu verfolgen und fleißig zu sein. Tanzen ist nicht nur Tanzen -
-                es geht auch um Freundschaft, Teamarbeit, gemeinsames Training,
-                Reisen, Erfolge und Niederlagen, die alle Teilnehmenden
-                miteinander verbinden. Unvergessliche Momente für die Kinder
-                sind garantiert.
-              </p>
-            </div>
-            <div class="text-card">
-              <p>
-                Meine pädagogische Grundlage habe ich durch mein Studium an der
-                Donbass Staatlichen Pädagogischen Universität gelegt, wo ich den
-                Bachelorabschluss in Grundschulpädagogik mit dem Wahlfach Kunst
-                erworben habe.
-              </p>
-            </div>
-            <div class="text-card">
-              <p>
-                Es ist mir ein großes Anliegen, sowohl Kindern als auch
-                Erwachsenen einen geschützten Raum zu bieten, in dem sie sich
-                durch Tanz kreativ entfalten, wachsen und einfach sie selbst
-                sein dürfen.
-              </p>
+
+            <div class="about-block">
+              <div class="about-photos">
+                <img
+                  class="img-lightbox"
+                  src="/image/über_mich/katja_3.jpg"
+                  alt="Katja in Tanzunterricht"
+                />
+              </div>
+              <div class="about-text">
+                <p class="text-card">
+                  Ich unterrichte mit viel Freude, Geduld und Verantwortung.
+                  Dabei ist es mir besonders wichtig auf jede Tänzerin und jeden
+                  Tänzer individuell einzugehen, sie zu unterstützen und zu
+                  motivieren. Ich möchte meinen Schüler:innen mitgeben, wie man
+                  lernt, Ziele zu verfolgen und fleißig zu sein. Tanzen ist
+                  nicht nur Tanzen - es geht auch um Freundschaft, Teamarbeit,
+                  gemeinsames Training, Reisen, Erfolge und Niederlagen, die
+                  alle Teilnehmenden miteinander verbinden. Unvergessliche
+                  Momente für die Kinder sind garantiert.
+                </p>
+                <p class="text-card">
+                  Es ist mir ein großes Anliegen, sowohl Kindern als auch
+                  Erwachsenen einen geschützten Raum zu bieten, in dem sie sich
+                  durch Tanz kreativ entfalten, wachsen und einfach sie selbst
+                  sein dürfen.
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </section>
     </main>
+    <load src="/src/partials/lightbox.html" />
 
     <!-- Footer -->
-    <footer class="footer">
-      <div class="footer-nav">
-        <a href="index.html">Startseite </a>
-        <a href="about.html">Über mich </a>
-        <a href="kurse.html">Tanzrichtungen</a>
-        <a href="impressum.html">Impressum</a>
-      </div>
-      <div>
-        <p>© 2025 Katharsis Dance. katharsisdance@gmail.com</p>
-        <p>
-          Instagram:
-          <a href="https://www.instagram.com/katharsis_dance" target="_blank"
-            >@katharsis_dance</a
-          >
-        </p>
-      </div>
-    </footer>
+    <load src="/src/partials/footer.html" />
+    <load src="/src/partials/form.html" />
+    <script type="module" src="/src/js/index.js"></script>
   </body>
 </html>

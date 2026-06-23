@@ -1,0 +1,119 @@
+.preview-modal {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  z-index: 999;
+  transition:
+    transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1),
+    opacity 0.5s ease;
+  opacity: 0;
+  pointer-events: none;
+  background-color: rgba(12, 0, 11, 0.836);
+}
+
+.container-modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  max-width: 90vw;
+  height: 100%;
+  /* aspect-ratio: 3 / 4; */
+  max-height: 90vh;
+  transform: translate(-50%, -50%);
+  touch-action: none;
+  border-radius: 30px;
+  box-shadow:
+    0 5px 20px rgba(var(--clr-rgb-btn), 0.4),
+    0 15px 80px rgba(var(--clr-rgb-btn), 0.35);
+}
+
+.thumb {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  /* aspect-ratio: 3 / 4; */
+  height: 100%;
+  transform: translate(-50%, -50%);
+  touch-action: none;
+  overflow: hidden;
+  border-radius: 30px;
+}
+
+.imgModal {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  -webkit-user-drag: none;
+  border-radius: 20px;
+  cursor: auto;
+}
+
+.preview-modal.active {
+  /* transform: translate(calc(50vw - 50%), calc(50vh - 50%)) scale(1); */
+
+  opacity: 1;
+  pointer-events: auto;
+  cursor: zoom-out;
+}
+
+.btnNav {
+  position: absolute;
+  top: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: beige;
+  color: var(--clr-bg-btn);
+  pointer-events: auto;
+  transform: translateY(-50%);
+  font-size: 36px;
+  border: 3px solid var(--clr-bg-btn);
+  z-index: 10000;
+}
+
+.btnPrev {
+  left: -22px;
+}
+
+.btnNext {
+  right: -22px;
+}
+
+.btnClose {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  color: var(--clr-bg-btn);
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  padding-top: 1px;
+  font-size: 20px;
+  font-weight: 600;
+  padding-bottom: 4px;
+  z-index: 1000;
+  border: 1px solid var(--clr-bg-btn);
+
+  &:hover {
+    color: red;
+  }
+}
+
+.track {
+  display: flex;
+  /* justify-content: center; */
+  width: 300%;
+  height: 100%;
+  /* transform: translateX(-33.333%); */
+}
+
+.modal-slide {
+  flex: 0 0 33.333%;
+  height: 100%;
+  user-select: none;
+}

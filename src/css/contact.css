@@ -1,0 +1,139 @@
+@import "./style.css";
+
+/* --- Контейнер контактів --- */
+.contact-container {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 0 20px;
+  font-family: "Arial", sans-serif;
+}
+
+.contact-container h1,
+.contact-container h2 {
+  text-align: center;
+  color: #333;
+}
+
+.contact-container p,
+.contact-container a {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #555;
+  text-decoration: none;
+}
+
+.contact-container a:hover {
+  color: #b13e98;
+}
+
+/* --- Стиль контейнера новин --- */
+.news-block {
+  display: block;
+  background: #8e44ad; /* бузковий колір */
+  color: #fff;
+  text-decoration: none;
+  padding: 30px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+  margin-top: 20px;
+}
+
+.news-block h3 {
+  margin-top: 0;
+  font-size: 1.8rem;
+  color: white;
+}
+
+.news-block p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: white;
+}
+
+.news-block:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+@media (max-width: 600px) {
+  .news-block {
+    padding: 20px 15px;
+  }
+  .news-block h3 {
+    font-size: 1.4rem;
+  }
+  .news-block p {
+    font-size: 0.9rem;
+  }
+}
+.contact-container p {
+  font-size: 1.1rem;
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.contact-container i {
+  color: #8e44ad; /* бузковий акцент */
+  font-size: 1.3rem;
+}
+/* Бузковий блок */
+.news-block {
+  display: block;
+  background: #8e44ad;
+  color: #fff;
+  text-decoration: none;
+  padding: 30px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+  margin-top: 20px;
+}
+
+.news-block h3 {
+  margin-top: 0;
+  font-size: 1.8rem;
+}
+
+.news-block p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.news-block:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* Мобільні новини (iframe) */
+.news-frame {
+  display: none;
+  margin-top: 20px;
+}
+
+/* Адаптивність */
+@media (max-width: 768px) {
+  .desktop-news {
+    display: none; /* ховаємо посилання на мобільних */
+  }
+  .mobile-news {
+    display: block; /* показуємо iframe на мобільних */
+  }
+
+  .news-block h3 {
+    font-size: 1.4rem;
+  }
+
+  .news-block p {
+    font-size: 0.9rem;
+  }
+
+  .news-frame iframe {
+    height: 400px;
+  }
+}

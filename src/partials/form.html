@@ -1,0 +1,64 @@
+<!-- POPUP ФОРМА -->
+<section class="popup" id="popupForm" aria-hidden="true">
+  <div
+    class="popup-dialog"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="formTitle"
+  >
+    <button
+      class="popup-close"
+      id="closePopup"
+      aria-label="Galerie schließen"
+      aria-label="schließen"
+    >
+      ×
+    </button>
+
+    <h2 id="formTitle" class="popup-title">Melden Sie sich an</h2>
+
+    <form
+      id="bookingForm"
+      action="https://formspree.io/f/xlgzwbng5"
+      method="POST"
+    >
+      <div class="input-wrap">
+        <input type="text" name="name" id="name" placeholder="Name" required />
+        <span class="error" id="name-error"></span>
+      </div>
+      <div class="input-wrap">
+        <select name="direction" id="select" required>
+          <option value="" disabled selected>Richtung wählen</option>
+          <option value="Gruppenunterricht">Gruppenunterricht</option>
+          <option value="Privatunterricht">Privatunterricht</option>
+        </select>
+        <span class="error" id="select-error"></span>
+      </div>
+      <div class="input-wrap">
+        <input type="date" name="day" id="day" required />
+        <span class="error" id="data-error"></span>
+      </div>
+      <div class="input-wrap">
+        <input
+          type="time"
+          name="time"
+          id="time"
+          required
+          min="08:00"
+          max="21:00"
+        />
+        <span class="error" id="time-error"></span>
+      </div>
+      <button type="submit" aria-label="Schicken" class="btn">Schicken</button>
+    </form>
+    <div class="info" id="info">
+      <p class="thanks" id="thanksMsg" style="display: none">
+        ✅ Vielen Dank! Ihre Anfrage wurde erfolgreich gesendet.
+      </p>
+      <p class="errors" id="errorMsg" style="display: none">
+        ❌ Leider ist ein Fehler aufgetreten. Bitte versuchen Sie es später
+        erneut. <button class="btnClosed">Schließen Sie die Form</button>
+      </p>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,79 @@
+@import "./style.css";
+@import "./partials/modal.css";
+
+h1 {
+  font-family: "Poppins", sans-serif;
+  color: darkviolet;
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.gallery-item {
+  flex: 0 0 auto;
+  width: 300px;
+  aspect-ratio: 3/4;
+  overflow: hidden;
+  border-radius: 30px;
+  border: 2px solid rgba(var(--clr-rgb-hover), 0.3);
+  object-fit: cover;
+  cursor: pointer;
+  scale: 1;
+  box-shadow: 1px 1px 18px 5px rgba(var(--clr-rgb-hover), 0.05);
+  transition:
+    box-shadow 0.3s ease-in-out,
+    scale 0.3s ease-in-out,
+    border-color 0.3s ease-in-out;
+
+  &:hover,
+  &:focus-visible {
+    scale: 1.03;
+    border: 2px solid rgba(var(--clr-rgb-hover), 0.7);
+    box-shadow: 1px 1px 18px 5px rgba(var(--clr-rgb-hover), 0.25);
+  }
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: zoom-in;
+}
+
+.gallery-sentinel {
+  position: relative;
+  text-align: center;
+  margin: 20px auto;
+  width: 80%;
+}
+
+.line {
+  position: absolute;
+  top: 40%;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: radial-gradient(
+    ellipse at center,
+    var(--clr-bg-btn) 0%,
+    rgba(236, 6, 148, 0.068) 70%
+  );
+  z-index: 1;
+}
+
+.rhomb {
+  position: relative;
+  z-index: 2;
+  background-color: var(--clr-bg-main);
+  padding: 0 15px;
+  color: var(--clr-bg-btn);
+  font-size: 30px;
+  letter-spacing: 4px;
+}
