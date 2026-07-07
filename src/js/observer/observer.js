@@ -33,6 +33,6 @@ export function startObserver({
   );
 
   document.querySelectorAll(selector).forEach((el) => observer.observe(el));
-  console.log("observer");
+
   return observer;
 }

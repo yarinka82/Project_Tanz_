@@ -1,4 +1,4 @@
-import { photos } from "../data/slaider";
+import { photos } from "../data/fotos";
 
 
  let page = 1;
@@ -7,6 +7,7 @@ const perPage = 9;
 const gallery = document.getElementById("gallery");
 let visible = [];
 let currentIndex = 0;
+
 export const getVisible = () => visible;
 
 export function renderGallery() {
@@ -20,12 +21,11 @@ export function renderGallery() {
   if (newPhotos.length === 0) return false;
     page++;
   visible.push(...newPhotos);
-  console.log("🚀 ~ renderGallery ~ visible:", visible)
 
   const newPhotosHtml = newPhotos
     .map((p) => {
       return `<li class="gallery-item slide">
-        <img src="${p.image}" alt="${p.name}" />
+        <img src="${p.image}" alt="${p.alt}" data-full="${p.full}"/>
         </li>`;
     })
     .join("");

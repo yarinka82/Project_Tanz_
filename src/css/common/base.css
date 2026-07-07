@@ -114,12 +114,13 @@ h2 {
   color: var(--clr-font-main-primary);
   font-family: "Poppins", sans-serif;
   font-size: 24px;
+  font-weight: 600;
   line-height: 1.5;
-  letter-spacing: 1px;
+  letter-spacing: 0px;
 
   @media (min-width: 768px) {
     font-size: 34px;
-    font-weight: 600;
+    font-weight: 700;
     margin-bottom: 30px;
   }
 }

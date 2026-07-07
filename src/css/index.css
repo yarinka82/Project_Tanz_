@@ -130,6 +130,7 @@ h1 span {
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 20px;
   margin-top: 30px;
+  justify-items: center;
 }
 
 .card {
@@ -148,6 +149,7 @@ h1 span {
     box-shadow 0.3s;
   cursor: pointer;
   height: 100%;
+  max-width: 750px;
 }
 
 /* Анімація при наведенні */
@@ -208,4 +210,21 @@ h1 span {
 
 .card p {
   margin: 5px 0;
+}
+
+.link-more {
+  position: relative;
+
+  &:hover {
+    color: var(--clr-bg-btn);
+  }
+}
+
+.link-more:hover::after {
+  content: "➔";
+  position: absolute;
+  color: var(--clr-bg-btn);
+  left: -24px;
+  animation: arrowRight 2s linear infinite;
+  font-size: 0.9rem;
 }

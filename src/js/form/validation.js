@@ -23,7 +23,6 @@ const validation = (e) => {
     selectedDay = new Date(`${day}`);
     selectedDay.setHours(0, 0, 0, 0);
     isToday = selectedDay.getTime() === today.getTime();
-    console.log("🚀 ~ validation ~ isToday:", isToday);
   }
 
     if (day && time) {

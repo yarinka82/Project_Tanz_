@@ -15,7 +15,6 @@ if (sentinel) {
         const isModalActive = Modal.modal && Modal.modal.classList.contains("active");
 
         if (!isModalActive) {
-            console.log("observer");
             hasGalleryNext();
         }
     }

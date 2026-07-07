@@ -149,11 +149,15 @@ address p:focus-visible::before,
 .footer-bottom {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   justify-content: space-around;
   font-size: 0.9rem;
+  row-gap: 10px;
+  padding-top: 10px;
+  border-top: 1px solid white;
 
   @media (min-width: 768px) {
-    font-size: 1rem;
+    /* font-size: 1rem; */
   }
 }
 
@@ -363,3 +367,32 @@ span a:nth-child(1)::after {
   animation: arrowRight 2s linear infinite;
   font-size: 0.9rem;
 }
+
+.footer-dev {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.dev-logo {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid white;
+   transition: transform 0.3s ease;
+}
+
+.dev-txt {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-dev a {
+  font-size: 13px;
+}
+
+.footer-dev:has(a:hover) .dev-logo {
+    transform: rotate(360deg);
+    transition: transform 0.3s ease;
+  }
+

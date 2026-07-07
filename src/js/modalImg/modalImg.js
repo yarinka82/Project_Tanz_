@@ -1,13 +1,16 @@
+import { ImageGesture } from "../ImageGesture/ImageGesture";
+
 export const Modal = {
   modal: null,
   track: null,
-  imgModal: null,
+  imgActive: null,
   isPaused: false,
   isAnimating: false,
   currentIndex: 0,
   list: [],
-  startX: 0,
-  startY: 0,
+  lastDx: null,
+  // startX: 0,
+  // startY: 0,
   isPointer: null,
   cancelTimer: null,
 
@@ -33,13 +36,56 @@ export const Modal = {
     this.modal = document.querySelector(".preview-modal");
 
     this.track = this.modal.querySelector(".track");
+    const slidesModal = this.track.querySelectorAll(".modal-slide");
+    this.imgActive = slidesModal[1].querySelector("img");
 
     const isGallery = window.location.pathname.includes("gallery");
+    const modal = document.querySelector(".container-modal");
+
+    gestureGalery.init(this.imgActive, {
+      onGestureMove: ({ dx, dy }) => {
+
+        this.lastDx = dx;
+         if (Math.abs(dx) > Math.abs(dy)) {
+        this.track.style.transform = `translateX(calc(-33.333% + ${dx}px))`;
+
+       } else {
+          const scaleModal = Math.abs(dy/100);
+          modal.style.transform = `scale(calc(1 - ${scaleModal}))`;
+        } 
+      },
+      onGestureEnd: ({ action }) => {
+        switch (action) {
+          case "next":
+            this.btnNavigation("next");
+            break;
+
+          case "prev":
+            this.btnNavigation("prev");
+            break;
+
+          case "close":
+            this.close();
+            break;
+
+          case "cancel":
+            this.track.style.transform = "translateX(-33.333%)";
+            break;
+
+          case "restoreModal":
+            modal.style.transform = "scale(1)";
+            break;
+
+          default:
+            break;
+        }
+      },
+    });
 
     this.modal.addEventListener("pointerdown", (e) =>
       this.handleModalEvents(e, isGallery),
     );
-    this.modal.addEventListener("pointerup", (e) => this.swipeNavigation(e));
+    // this.modal.addEventListener("pointerup", (e) => this.swipeNavigation(e));
     document.addEventListener("keydown", (e) => this.keyNavigation(e));
   },
 
@@ -49,7 +95,8 @@ export const Modal = {
 
     if (
       (this.currentIndex === len - 2 || this.currentIndex === len - 1) &&
-      this.hasGalleryNext && direction ==="next"
+      this.hasGalleryNext &&
+      direction === "next"
     ) {
       const isLoad = this.hasGalleryNext();
       if (isLoad) {
@@ -63,31 +110,46 @@ export const Modal = {
     const slidesModal = this.track.querySelectorAll(".modal-slide");
 
     const imgPrev = slidesModal[0].querySelector("img");
-    const imgActive = slidesModal[1].querySelector("img");
+    this.imgActive = slidesModal[1].querySelector("img");
     const imgNext = slidesModal[2].querySelector("img");
 
+    gestureGalery.setImage(this.imgActive);
+
     if (!direction) {
-      imgActive.src = this.list[this.currentIndex].image;
-      imgPrev.src = this.list[prevIndex].image;
-      imgNext.src = this.list[nextIndex].image;
+      this.imgActive.src = this.list[this.currentIndex].full;
+      imgPrev.src = this.list[prevIndex].full;
+      imgNext.src = this.list[nextIndex].full;
+
+      this.imgActive.alt = this.list[this.currentIndex].alt;
+      imgPrev.alt = this.list[prevIndex].alt;
+      imgNext.alt = this.list[nextIndex].alt;
     }
 
-    if (direction === "prev") imgPrev.src = this.list[prevIndex].image;
-    if (direction === "next") imgNext.src = this.list[nextIndex].image;
+    if (direction === "prev") imgPrev.src = this.list[prevIndex].full;
+    if (direction === "next") imgNext.src = this.list[nextIndex].full;
+
+    if (direction === "prev") imgPrev.alt = this.list[prevIndex].alt;
+    if (direction === "next") imgNext.alt = this.list[nextIndex].alt;
   },
 
   open(e, list, hasGalleryNext = false) {
+    const modal = document.querySelector(".container-modal");
+    modal.style.transform = "scale(1)";
+
     const slideActive = e.target.closest(".slide");
     if (!slideActive) return;
 
     this.list = list;
+
     this.hasGalleryNext = hasGalleryNext;
     this.isPaused = true;
     this.isAnimating = false;
 
     const img = slideActive.querySelector("img");
-    const currentSrc = img.getAttribute("src");
-    this.currentIndex = this.list.findIndex((sl) => sl.image === currentSrc);
+    // const currentSrc = img.getAttribute("src");
+    const currentSrc = img.dataset.full;
+    this.currentIndex = this.list.findIndex((sl) => sl.full === currentSrc);
+
     if (this.currentIndex === -1) this.currentIndex = 0;
 
     this.track.style.transition = "none";
@@ -125,20 +187,20 @@ export const Modal = {
       return;
     }
 
-    this.startX = e.clientX;
-    this.startY = e.clientY;
-    this.isPointer = true;
-    e.preventDefault();
+    // this.startX = e.clientX;
+    // this.startY = e.clientY;
+    // this.isPointer = true;
+    // e.preventDefault();
 
-    this.cancelTimer = setTimeout(() => {
-      this.startX = 0;
-      this.startY = 0;
-      this.isPointer = false;
-      if (e.target.closest(".preview-modal") && !isGallery) {
-        window.location.href = "/gallery";
-        return;
-      }
-    }, 500);
+    // this.cancelTimer = setTimeout(() => {
+    //   this.startX = 0;
+    //   this.startY = 0;
+    //   this.isPointer = false;
+    //   if (e.target.closest(".preview-modal") && !isGallery) {
+    //     window.location.href = "/gallery";
+    //     return;
+    //   }
+    // }, 500);
   },
 
   closeViaMouse(e) {
@@ -155,6 +217,8 @@ export const Modal = {
     if (this.modal) {
       this.modal.classList.remove("active");
       this.isPaused = false;
+      this.imgActive = null;
+      gestureGalery.reset();
     }
   },
 
@@ -167,7 +231,8 @@ export const Modal = {
       key === "6" ||
       key === "d" ||
       key === "arrowright" ||
-      (key === "arrowdown") || (key === "2")
+      key === "arrowdown" ||
+      key === "2"
     ) {
       Modal.btnNavigation("next");
     }
@@ -175,7 +240,8 @@ export const Modal = {
       key === "4" ||
       key === "8" ||
       key === "arrowleft" ||
-      (key === "arrowup") || (key === "a")
+      key === "arrowup" ||
+      key === "a"
     ) {
       Modal.btnNavigation("prev");
     }
@@ -229,29 +295,8 @@ export const Modal = {
     );
   },
 
-  swipeNavigation(e) {
-    clearTimeout(this.cancelTimer);
-
-    if (!this.isPointer) return;
-    this.isPointer = false;
-
-    const endX = e.clientX;
-    const endY = e.clientY;
-    const diffX = endX - this.startX;
-    const diffY = endY - this.startY;
-
-    if (Math.abs(diffX) > Math.abs(diffY)) {
-      if (Math.abs(diffX) > 40) {
-        if (diffX > 40) {
-          this.btnNavigation("prev");
-        } else {
-          this.btnNavigation("next");
-        }
-      }
-    } else {
-      if (diffY > 40) {
-        this.close();
-      }
-    }
-  },
 };
+
+let imgActive = Modal.imgModal;
+
+const gestureGalery = new ImageGesture();

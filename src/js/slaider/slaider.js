@@ -1,7 +1,7 @@
-import { photos } from "../data/slaider";
+import { photos } from "../data/fotos";
 import { Modal } from "../modalImg/modalImg";
 
-Modal.init();
+// Modal.init();
 
 export function slaider() {
   const container = document.querySelector(".slider-wrapper");
@@ -21,8 +21,10 @@ export function slaider() {
   let widthContainer = 0;
 
   track.innerHTML = `<div class="slide">
+          <a href="/gallery.html" aria-label="Zur Fotogalerie wechseln und mehr Bilder ansehen">
             <img src="${photos[startIndex].image}" alt="${photos[startIndex].name}" />
-          </div>`;
+          </a>
+        </div>`;
 
   function render() {
     const firstSlide = track.firstElementChild;
@@ -47,7 +49,9 @@ export function slaider() {
     const marque = visible
       .map((p) => {
         return `<li class="slide">
+         <a href="/gallery.html" aria-label="Zur Fotogalerie wechseln und mehr Bilder ansehen">
             <img src="${p.image}" alt="${p.name}" />
+            </a>
           </li>`;
       })
       .join("");
@@ -91,19 +95,14 @@ export function slaider() {
     requestAnimationFrame(step);
   }, 50);
 
+  window.addEventListener("resize", render);
 
-    window.addEventListener("resize", render);
-    
-  track.addEventListener("mouseover", (e) => Modal.open(e, visible));
-  track.addEventListener("mouseout", (e) => Modal.closeViaMouse(e));
-  Modal.modal.addEventListener("mouseleave",  (e) =>Modal.close());
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") {
-      Modal.close();
-    }
-  });
-   
+  // track.addEventListener("mouseover", (e) => Modal.open(e, visible));
+  // track.addEventListener("mouseout", (e) => Modal.closeViaMouse(e));
+  // Modal.modal.addEventListener("mouseleave",  (e) =>Modal.close());
+  // document.addEventListener("keydown", (e) => {
+  //   if (e.key === "Escape") {
+  //     Modal.close();
+  //   }
+  // });
 }
-
-
-  

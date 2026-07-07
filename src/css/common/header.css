@@ -83,7 +83,8 @@ nav a.active {
 nav a::before,
 .btnLink::before,
 .footer-nav a::before,
-address p::before {
+address p::before,
+.link-more::before {
   content: "";
   position: absolute;
   bottom: -3px;
@@ -129,7 +130,9 @@ nav ul li a {
 }
 
 nav li a:hover,
-nav li a:focus-visible {
+nav li a:focus-visible,
+.link-more:hover::before, 
+.link-more:focus-visible::before {
   color: var(--clr-bg-btn);
   scale: 1.02;
   transform: translateY(-2px) scale(1.02);
@@ -142,7 +145,9 @@ address p:hover::before,
 nav ul li a:focus-visible::before,
 .btnLink:focus-visible::before,
 .footer-nav a:focus-visible::before,
-address a:focus-visible::before {
+address a:focus-visible::before,
+.link-more:hover::before, 
+.link-more:focus-visible::before {
   transform: scaleX(1);
   opacity: 1;
   background: var(--clr-bg-btn);

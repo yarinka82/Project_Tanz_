@@ -33,6 +33,8 @@ nav.addEventListener("click", (e) => {
 
   if (e.target.closest("nav li")) {
     nav.classList.remove("open");
+    icon.classList.remove("fa-times");
+      icon.classList.add("fa-bars")
     document.body.style.overflowY = "auto";
   }
 });

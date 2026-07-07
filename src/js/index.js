@@ -7,6 +7,7 @@ import {
   handleMouseUp,
   lightbox,
 } from "./lightbox/lightbox.js";
+import { renderYearAge } from "./year/year.js";
 
 const aboutObserver = startObserver({
   selector: ".about-block",
@@ -32,26 +33,6 @@ const kurseTxtObserver = startObserver({
 })
 
 
-queueMicrotask(() => {
-  const cb = () => {
-    const items = document.querySelectorAll(".accordion-item");
-    items.forEach((item, index) => {
-      setTimeout(
-        () => {
-          item.classList.add("visible");
-        },
-        900 + index * 1000,
-      );
-    });
-  };
-  const accordionObserver = startObserver({
-    selector: ".accordion",
-    callback: cb,
-    threshold: 0.2,
-    marginY: "5px",
-  });
-});
-
 document.addEventListener("click", lightbox);
 const lightboxEl = document.getElementById("lightbox");
 if (lightboxEl)
@@ -60,6 +41,9 @@ if (lightboxEl)
     history.replaceState(null, null, " ");
     if (img) img.src = "";
 
-    window.removeEventListener("mouseup", handleMouseUp);
-    window.removeEventListener("mousemove", handleMouseMove);
+    // window.removeEventListener("mouseup", handleMouseUp);
+    // window.removeEventListener("mousemove", handleMouseMove);
   });
+
+
+  renderYearAge();

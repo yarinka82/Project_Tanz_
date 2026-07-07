@@ -1,29 +1,27 @@
-export function lightbox(e) {
-  const lightboxEl = document.getElementById("lightbox");
-  console.log("🚀 ~ lightbox ~ lightboxEl:", lightboxEl);
-  const img = lightboxEl?.querySelector(".lightboxImg");
-  console.log("🚀 ~ lightbox ~ img:", img);
+import { ImageGesture } from "../ImageGesture/ImageGesture";
 
-  if (!lightboxEl || !img) return;
+
+let imgActive = null;
+
+
+
+const gestureLightbox = new ImageGesture();
+
+export function lightbox(e) {
+const lightboxEl = document.getElementById("lightbox");
+const img = lightboxEl?.querySelector(".lightboxImg");
+imgActive = img;
+
+
+  if (!img) return;
 
   if (e.target.classList.contains("img-lightbox")) {
-    img.src = e.target.src;
-      console.log("🚀 ~ lightbox ~ img.src:", img.src)
-      img.alt = e.target.alt;
-      img.style.cursor = "zoom-in"
-    startX = 0;
-    startY = 0;
-    currentScale = 1;
-    translateX = 0;
-    translateY = 0;
+    img.src = e.target.dataset.full;
+    img.alt = e.target.alt;
+    img.style.cursor = "zoom-in";
+
     lightboxEl.showModal();
-
-    updateImgTransform(img);
-
-    img.addEventListener("wheel", handleWheelZoom);
-    img.addEventListener("mousedown", handleMouseDown);
-    window.addEventListener("mousemove", handleMouseMove);
-    window.addEventListener("mouseup", handleMouseUp);
+      gestureLightbox.init(img);
   }
 
   if (
@@ -31,10 +29,7 @@ export function lightbox(e) {
     e.target === lightboxEl
   ) {
     lightboxEl.close();
-    img.removeEventListener("wheel", handleWheelZoom);
-    img.removeEventListener("mousedown", handleMouseDown);
-    window.removeEventListener("mousemove", handleMouseMove);
-    window.removeEventListener("mouseup", handleMouseUp);
+    gestureLightbox.reset();
   }
 }
 
@@ -49,16 +44,31 @@ const ZOOM_MIN = 1;
 const ZOOM_MAX = 5;
 const ZOOM_SPEED = 0.15;
 
+export function handleClickZoom(e) {
+  e.preventDefault();
+
+   imgActive = e.currentTarget;
+
+  currentScale = Math.min(currentScale + ZOOM_SPEED, ZOOM_MAX);
+  imgActive.style.cursor = "grab";
+  updateImgTransform();
+}
+
+export function resetZoom(e) {
+   imgActive = e.currentTarget;
+
+  currentScale = 1;
+  updateImgTransform(imgActive);
+  imgActive.style.cursor = "zoom-in";
+}
+
 export function handleWheelZoom(e) {
   e.preventDefault();
 
-  const img = e.currentTarget;
-  console.log("🚀 ~ handleWheelZoom ~ img:", img)
+   imgActive = e.currentTarget;
 
   if (e.deltaY < 0) {
-    console.log("🚀 ~ handleWheelZoom ~ deltaY:", e.deltaY);
     currentScale = Math.min(currentScale + ZOOM_SPEED, ZOOM_MAX);
-    console.log("🚀 ~ handleWheelZoom ~ currentScale:", currentScale);
   } else {
     currentScale = Math.max(currentScale - ZOOM_SPEED, ZOOM_MIN);
   }
@@ -66,22 +76,22 @@ export function handleWheelZoom(e) {
   if (currentScale === 1) {
     translateX = 0;
     translateY = 0;
-    img.style.cursor = "zoom-in";
+    imgActive.style.cursor = "zoom-in";
   } else {
-    img.style.cursor = "grab";
+    imgActive.style.cursor = "grab";
   }
-  updateImgTransform(img);
+  updateImgTransform(imgActive);
 }
 
 export function updateImgTransform(img) {
-  img.style.transform = `translate(${translateX}px, ${translateY}px) scale(${currentScale})`;
+  // imgActive.style.transform = `translate(${translateX}px, ${translateY}px) scale(${currentScale})`;
 }
 
 export function handleMouseDown(e) {
   if (currentScale < ZOOM_MIN) return;
   e.preventDefault();
-  const img = e.currentTarget;
-  img.style.cursor = "grabbing";
+   imgActive = e.currentTarget;
+  imgActive.style.cursor = "grabbing";
 
   isDragging = true;
 
@@ -92,11 +102,9 @@ export function handleMouseDown(e) {
 export function handleMouseUp() {
   if (!isDragging) return;
   isDragging = false;
-  const lightboxEl = document.getElementById("lightbox");
-  const img = lightboxEl.querySelector(".lightboxImg");
 
-  if (img) {
-    img.style.cursor = "grab";
+  if (imgActive) {
+    imgActive.style.cursor = "grab";
   }
 }
 
@@ -104,9 +112,7 @@ export function handleMouseMove(e) {
   if (!isDragging) return;
   // e.preventDefault();
 
-  const lightboxEl = document.getElementById("lightbox");
-  const img = lightboxEl.querySelector(".lightboxImg");
-  const rect = img.getBoundingClientRect();
+  const rect = imgActive.getBoundingClientRect();
 
   const viewWidth = rect.width / currentScale;
   const viewHeight = rect.height / currentScale;
@@ -120,7 +126,7 @@ export function handleMouseMove(e) {
   translateX = Math.min(Math.max(targetX, -maxX), maxX);
   translateY = Math.min(Math.max(targetY, -maxY), maxY);
 
-  if (img) {
-    updateImgTransform(img);
+  if (imgActive) {
+    updateImgTransform(imgActive);
   }
 }
