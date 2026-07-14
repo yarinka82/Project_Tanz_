@@ -3,9 +3,9 @@
     <div class="footer-top">
       <a href="/" class="logo-link">
         <img
-          src="/image/katharsis-logo.webp"
+          src="/image/katharsis-logo.svg"
           width="150"
-          height="50"
+          height="60"
           alt="На головну"
           class="logo-img"
         />
@@ -13,18 +13,25 @@
       <div class="contacts">
         <h3>Kontaktiere uns</h3>
         <address class="footer-social">
-          <a href="tel:+49123456789"
-            ><i class="fas fa-phone"></i>+49 123 456 789</a
+          <a href="tel:+491711420052"
+            ><svg width="16" height="16">
+              <use href="/image/sprite.svg#phone"></use>
+            </svg>
+            +49 171 142 0052</a
           >
           <a
             href="https://www.instagram.com/katharsis_dance"
             target="_blank"
             rel="noopener noreferrer"
-            ><i class="fab fa-instagram"></i>@katharsis_dance</a
+            ><svg width="16" height="16">
+              <use href="/image/sprite.svg#instagram"></use>
+            </svg>@katharsis_dance</a
           >
 
           <a href="mailto:katharsisdance@gmail.com"
-            ><i class="fas fa-envelope"></i>katharsisdance@gmail.com</a
+            ><svg width="16" height="16">
+              <use href="/image/sprite.svg#envelop"></use>
+            </svg></i>katharsisdance@gmail.com</a
           >
         </address>
       </div>
@@ -50,28 +57,37 @@
         <a href="index.html#hausordnung">Hausordnung</a>
         <a href="index.html#abonements">Abonnements und Preise</a>
         <a href="index.html#stundenplan">Stundenplan</a>
+        <a
+          href="https://docs.google.com/document/d/1mYv_-VJ2w-5GUGYckwgQWDE6iHwBe4296-pi6yrgYf8/edit?tab=t.0"
+          >Neuigkeiten</a
+        >
       </div>
     </div>
 
     <div class="footer-bottom">
       <p>© 2025-<span id="currentYear"></span> Katharsis Dance</p>
-      <span>
+      <span class="imp-dat">
         <a href="impressum.html">Impressum</a>
         <a href="datenschutz.html"> Datenschutz</a>
       </span>
-      <div class="footer-dev">
-        <img class="dev-logo" src="/image/logo_Hub_it_Community.webp" alt="logo digital_it_hub">
-      <p class="dev-txt">
-        Website & Design by
-        <a
-          href="https://www.instagram.com/digital_it_hub_wu/#"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Digital IT Hub Würzburg e.V.
-        </a>
-      </p>
+      <div class="footer-dev"> 
+        <p class="dev-label"> Website & Design by </p>
+          <a
+            href="https://www.instagram.com/digital_it_hub_wu/#"
+            target="_blank" class="dev-link"
+            rel="noopener noreferrer"
+          >
+            <img class="dev-logo" src="/image/logo_Hub_it_Community.webp"  width="32"
+          height="32" alt="logo digital_it_hub"/>
+            <span class="dev-name">Digital IT Hub Würzburg e.V.</span>
+          </a>
+       
       </div>
     </div>
   </div>
+  <button type="button" class="btnUp"  aria-label="Nach oben scrollen" title="Nach oben scrollen">
+    <svg class="iconUp" width="30" height="30">
+      <use href="/image/sprite.svg#select-up"></use>
+    </svg>
+  </button>
 </footer>

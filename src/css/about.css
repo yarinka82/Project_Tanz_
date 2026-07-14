@@ -3,13 +3,17 @@
 /* -- Hero -- */
 .hero-ich {
   position: relative;
-  min-height: 70vh;
+  min-height: 80vh;
   background:
     linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
     url("/image/über_mich/katja_über_mich_hero.jpg") center/cover no-repeat;
   display: flex;
   align-items: start;
   justify-content: flex-start;
+
+    @media (min-width: 768px) {
+    min-height: 85vh;
+  }
 }
 
 .hero-ich-overlay {
@@ -27,8 +31,12 @@
 }
 
 .hero-ich-content h1 {
-  font-size: 2.8rem;
-  padding: 20px;
+  font-size: 1.8rem;
+
+  @media (min-width: 768px) {
+     font-size: 2.8rem;
+  }
+  
 }
 
 .hero-ich-content p {
@@ -156,10 +164,6 @@
 
 /* -- Mobil -- */
 @media (max-width: 480px) {
-  .hero-ich-content h1 {
-    font-size: 1.8rem;
-  }
-
   .hero-ich-content p {
     font-size: 1rem;
   }

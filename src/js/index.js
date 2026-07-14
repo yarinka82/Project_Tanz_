@@ -9,6 +9,8 @@ import {
 } from "./lightbox/lightbox.js";
 import { renderYearAge } from "./year/year.js";
 
+const header = document.querySelector(".header-katharsis");
+
 const aboutObserver = startObserver({
   selector: ".about-block",
   threshold: 0,
@@ -33,7 +35,26 @@ const kurseTxtObserver = startObserver({
 })
 
 
-document.addEventListener("click", lightbox);
+document.addEventListener("click", (e) => {
+  lightbox(e);
+  const btn = e.target.closest(".btnUp");
+  console.log("🚀 ~ btn:", btn)
+console.log("🚀 ~ e.target:", e.target)
+  if (btn) {
+    window.scrollTo({
+      top: "50",
+      behavior: "smooth"
+    })
+    return;
+  }
+
+  if (header && header.contains(e.target) && header.classList.contains("hidden")) {
+    e.preventDefault();
+    header.classList.remove("hidden");
+  }
+}
+);
+
 const lightboxEl = document.getElementById("lightbox");
 if (lightboxEl)
   lightboxEl.addEventListener("close", () => {

@@ -60,3 +60,18 @@
 .schedule a {
   margin-top: 15px;
 }
+
+.news {
+  position: relative;
+  font-weight: bold;
+  color: var(--clr-bg-btn-hover);
+
+  &:hover {
+    color: var(--clr-bg-btn);
+  }
+}
+
+.news:hover::after,
+.news:focus-visible::after {
+  color: var(--clr-bg-btn);
+}

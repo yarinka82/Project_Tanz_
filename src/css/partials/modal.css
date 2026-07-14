@@ -46,6 +46,7 @@
 }
 
 .imgModal {
+  min-width: 300px;
   max-width: 100%;
   max-height: 90vh;
   aspect-ratio: 2 / 3;

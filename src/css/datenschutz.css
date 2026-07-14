@@ -12,10 +12,13 @@
     box-shadow: 0 4px 12px rgba(22, 1, 21, 0.9);
     width: 90%;
     margin: 40px auto;
+    padding-block: 30px;
+  }
+
+  @media (min-width: 1024px) {
     --webkit-hyphens: none;
     --ms-hyphens: none;
     hyphens: none;
-    padding-block: 30px;
   }
 }
 
@@ -154,6 +157,7 @@
   line-height: 1.8;
   margin-top: 5px;
   padding-left: 10px;
+  text-wrap: wrap;
 
   @media (min-width: 768px) {
     font-size: 1.1rem;
@@ -175,4 +179,14 @@ dd {
 
 .privacy-container a {
   color: var(--clr-font-main-primary);
+}
+
+.privacy-card .strong {
+  display: inline-block;
+  margin-top: 20px;
+  text-align: left;
+}
+
+.privacy-container address {
+  display: block;
 }

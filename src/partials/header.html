@@ -1,16 +1,20 @@
-<header>
+<header class="header-katharsis">
   <div class="container container-header">
     <a href="/" class="logo-link">
       <img
-        src="/image/katharsis-logo.webp"
+        src="/image/katharsis-logo.svg"
         width="150"
-        height="50"
+        height="60"
         alt="На головну"
         class="logo-img"
       />
     </a>
     <nav id="nav">
-      <div class="burger"><i class="fas fa-bars"></i></div>
+      <div class="burger">
+        <svg width="20">
+          <use href="/image/sprite.svg#menu"></use>
+        </svg>
+      </div>
       <ul>
         <li><a href="/index.html">Startseite</a></li>
         <li><a href="/about.html">Über mich</a></li>
@@ -31,4 +35,5 @@
       </ul>
     </nav>
   </div>
+  <div id="top-pointer"></div>
 </header>

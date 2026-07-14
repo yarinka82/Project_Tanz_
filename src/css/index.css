@@ -214,9 +214,14 @@ h1 span {
 
 .link-more {
   position: relative;
+  color: var(--clr-bg-btn-hover);
+  transform: scale(1);
+  transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+  font-weight: bold;
 
   &:hover {
     color: var(--clr-bg-btn);
+     transform: scale(1.05);
   }
 }
 

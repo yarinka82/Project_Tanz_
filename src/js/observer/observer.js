@@ -6,23 +6,34 @@ export function startObserver({
   delay = false,
   marginY = "0px",
   repeit = false,
+  targetSelector = null,
+  invert = false
 }) {
   const observer = new IntersectionObserver(
     (entries, obs) => {
       entries.forEach((entry, index) => {
-        if (entry.isIntersecting) {
-          if (typeof callback === "function") callback(entry.target);
+
+        const activeTarget = targetSelector ? document.querySelector(targetSelector) : entry.target;
+        console.log("🚀 ~ startObserver ~ activeTarget:", activeTarget)
+
+        if (!activeTarget) return;
+
+        const isTriggered = invert ? !entry.isIntersecting : entry.isIntersecting;
+
+
+        if (isTriggered) {
+          if (typeof callback === "function") callback(activeTarget);
 
           if (delay) {
-            entry.target.style.transitionDelay = `${index * delay}s`;
+            activeTarget.style.transitionDelay = `${index * delay}s`;
           }
 
-          entry.target.classList.add(classToAdd);
+          activeTarget.classList.add(classToAdd);
         } else {
-          if (repeit) {
-            entry.target.classList.remove(classToAdd);
+          if (repeit || invert) {
+            activeTarget.classList.remove(classToAdd);
             if (delay) {
-              entry.target.style.transitionDelay = "0s";
+              activeTarget.style.transitionDelay = "0s";
             }
           }
         }
