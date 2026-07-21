@@ -146,3 +146,7 @@ h3 {
   font-size: 1.45rem;
   font-weight: 700;
 }
+
+main {
+  padding-top: 80px;
+}

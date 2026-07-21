@@ -1,32 +1,51 @@
-import './index.js';
+import "./index.js";
 import { getVisible, renderGallery } from "./gallery/gallery";
-import { Modal } from './modalImg/modalImg.js';
-import { startObserver } from './observer/observer.js';
+import { Modal } from "./modalImg/modalImg.js";
+import { startObserver } from "./observer/observer.js";
 
-let galleryObserver  = null;
+let galleryObserver = null;
 const sentinel = document.querySelector(".gallery-sentinel");
-Modal.init();
-renderGallery();
+const gallery = document.getElementById("gallery");
 
-gallery.addEventListener("click", (e) => Modal.open(e, getVisible(), hasGalleryNext));
+function initGalery() {
+  if (gallery) {
+    Modal.init();
+    renderGallery();
+    gallery.addEventListener("click", (e) =>
+      Modal.open(e, getVisible(), hasGalleryNext),
+    );
 
-if (sentinel) {
-    const cb = () => {
-        const isModalActive = Modal.modal && Modal.modal.classList.contains("active");
-
-        if (!isModalActive) {
-            hasGalleryNext();
-        }
-    }
-
-galleryObserver  = startObserver({selector: ".gallery-sentinel", callback: cb, marginY: "200px"})
+    startGalleryObserver();
+  }
 }
 
+const cb = () => {
+  const isModalActive = Modal.modal && Modal.modal.classList.contains("active");
+
+  if (!isModalActive) {
+    hasGalleryNext();
+  }
+};
+
+initGalery();
 
 function hasGalleryNext() {
   const hasMore = renderGallery();
-  if (!hasMore && galleryObserver&&sentinel ) {
-    galleryObserver .unobserve(sentinel);
+  if (!hasMore && galleryObserver && sentinel) {
+    galleryObserver.unobserve(sentinel);
   }
   return hasMore;
+}
+
+export function stopGalleryObserver() {
+  galleryObserver.disconnect();
+}
+
+export function startGalleryObserver() {
+  if (!sentinel) return;
+  galleryObserver = startObserver({
+    selector: ".gallery-sentinel",
+    callback: cb,
+    marginY: "200px",
+  });
 }

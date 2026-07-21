@@ -14,7 +14,6 @@ export function startObserver({
       entries.forEach((entry, index) => {
 
         const activeTarget = targetSelector ? document.querySelector(targetSelector) : entry.target;
-        console.log("🚀 ~ startObserver ~ activeTarget:", activeTarget)
 
         if (!activeTarget) return;
 

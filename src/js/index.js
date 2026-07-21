@@ -8,6 +8,8 @@ import {
   lightbox,
 } from "./lightbox/lightbox.js";
 import { renderYearAge } from "./year/year.js";
+import { startGalleryObserver, stopGalleryObserver } from "./gallery.js";
+import { renderGallery } from "./gallery/gallery.js";
 
 const header = document.querySelector(".header-katharsis");
 
@@ -23,37 +25,68 @@ const h2Observer = startObserver({
 });
 
 const kurseImgObserver = startObserver({
-    selector: ".kurs-image",
-    threshold: 0,
+  selector: ".kurs-image",
+  threshold: 0,
   marginY: "0px",
-})
+});
 
 const kurseTxtObserver = startObserver({
-    selector: ".kurs-text",
-    threshold: 0,
+  selector: ".kurs-text",
+  threshold: 0,
   marginY: "0px",
-})
-
+});
 
 document.addEventListener("click", (e) => {
   lightbox(e);
   const btn = e.target.closest(".btnUp");
-  console.log("🚀 ~ btn:", btn)
-console.log("🚀 ~ e.target:", e.target)
+  const contactLink = document.querySelector('a[href="#contacts"]');
+    const contactsSection = document.getElementById("contacts");
+const btnLoadMore = document.getElementById("loadMoreBtn")
+const gallery = document.getElementById("gallery");
+
+
   if (btn) {
     window.scrollTo({
       top: "50",
-      behavior: "smooth"
-    })
+      behavior: "smooth",
+    });
     return;
   }
 
-  if (header && header.contains(e.target) && header.classList.contains("hidden")) {
+  if (
+    header &&
+    header.contains(e.target) &&
+    header.classList.contains("hidden")
+  ) {
     e.preventDefault();
     header.classList.remove("hidden");
   }
+
+  if (e.target.closest('a[href="#contacts"]')) {
+    e.preventDefault();
+
+  if (gallery)  {
+    const hasMore = renderGallery(); 
+    stopGalleryObserver();
+
+   if (hasMore) {
+   btnLoadMore.classList.remove("hidden"); 
+   } 
+  }
+    contactsSection.scrollIntoView({ behavior: "smooth" });
+
+    setTimeout(() => {
+      contactsSection.focus();
+    }, 500);
+
+    return;
+  }
+  if (e.target.closest("#loadMoreBtn")) {
+  startGalleryObserver();
+  btnLoadMore.classList.add("hidden")
 }
-);
+
+});
 
 const lightboxEl = document.getElementById("lightbox");
 if (lightboxEl)
@@ -66,5 +99,4 @@ if (lightboxEl)
     // window.removeEventListener("mousemove", handleMouseMove);
   });
 
-
-  renderYearAge();
+renderYearAge();

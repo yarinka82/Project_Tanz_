@@ -81,3 +81,14 @@ h1 {
   font-size: 30px;
   letter-spacing: 4px;
 }
+
+.btnLoadMore.hidden {
+  visibility: hidden;
+  margin: 0;
+  height: 0;
+}
+
+.btnLoadMore {
+  display: block;
+  margin: 30px auto;
+}
